@@ -9,5 +9,6 @@ public interface propertyDAO {
 	public List<property> findAll();
 	public List<property> findById();
 	public String deleteById();
+	public String test();
 
 }

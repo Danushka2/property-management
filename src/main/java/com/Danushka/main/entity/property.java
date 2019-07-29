@@ -20,4 +20,37 @@ public class property {
 	@Column(name="address")
 	private String address;
 	
+	@Column(name="city")
+	private String city;
+
+	@Column(name="time_period")
+	private String timePeriod;
+
+	@Column(name="rooms")
+	private int noOfRooms;
+
+	@Column(name="air_condition")
+	private String airCondition;
+
+	@Column(name="parking")
+	private String parking;
+
+	@Column(name="key_money")
+	private int keyMoney;
+
+	@Column(name="monthly_price")
+	private int monthlyPrice;
+
+	@Column(name="discription")
+	private String discription;
+
+	@Column(name="owner_id")
+	private int ownerId;
+
+	@Column(name="parent_id")
+	private int parentId;
+
+	@Column(name="student_id")
+	private int studentId;
+
 }
