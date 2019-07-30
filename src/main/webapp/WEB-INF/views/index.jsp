@@ -8,7 +8,7 @@
 </head>
 <body>
 
-<h1>Testing web service</h1>
+<h1>Spring boot web application</h1>
 
 </body>
 </html>
