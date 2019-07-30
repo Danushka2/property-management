@@ -57,7 +57,18 @@
 			<artifactId>reactor-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+	
+		<dependency>
+		    <groupId>org.apache.tomcat</groupId>
+		    <artifactId>tomcat-jasper</artifactId>
+		    <version>9.0.21</version>
+		</dependency>
+	
+	
 	</dependencies>
+	
+	<!-- https://mvnrepository.com/artifact/org.apache.tomcat/tomcat-jasper -->
+	
 
 	<build>
 		<plugins>
