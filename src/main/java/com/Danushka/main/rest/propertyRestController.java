@@ -19,37 +19,26 @@ import com.Danushka.main.entity.property;
 @RequestMapping("/api")
 public class propertyRestController {
 
-	propertyDAO propertyDAOObject;
 	propertyRepository proJPA;
 	property obj;
 	
 	@Autowired
-	public propertyRestController(propertyDAO propertyDAOObj, propertyRepository obj) {
-		super();
-		this.propertyDAOObject = propertyDAOObj;
+	public propertyRestController(propertyRepository obj) {
 		this.proJPA = obj;
 	}
 
-
-	@GetMapping("/hello")
+	@RequestMapping("/hello")
 	public String hello() {
-		return propertyDAOObject.test();
+		return "Hello";
 	}
 
-	@GetMapping("/save")
-	public String saveProerty() {
-		
-		propertyDAOObject.save();
-		return "entry saved";
-	}
-	
-	@PostMapping("/savejson")
+	@PostMapping("/property")
 	public void saveProertyJSON(@RequestBody property propertyOBJ) {
 		this.obj = propertyOBJ;
 		proJPA.save(obj);
 	}
 	
-	@GetMapping("/find")
+	@GetMapping("/property")
 	public List<property> findProerty() {
 	
 		return proJPA.findAll();
