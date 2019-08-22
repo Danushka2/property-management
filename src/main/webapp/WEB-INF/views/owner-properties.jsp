@@ -12,9 +12,9 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700,900&display=swap" rel="stylesheet">
 
     <!-- Styles -->
-    <link rel="stylesheet" href="assets/css/main.css">
-    <link rel="stylesheet" href="assets/css/dashboard.css">
-    <link rel="stylesheet" href="assets/css/owner-property.css">
+    <link rel="stylesheet" href="/resources/css/main.css">
+    <link rel="stylesheet" href="/resources/css/dashboard.css">
+    <link rel="stylesheet" href="/resources/css/owner-property.css">
 
     <title>Owner</title>
 </head>
@@ -25,7 +25,7 @@
                     <div class="left-panel">
                         <div class="wrapper-profile">
                             <div class="profile-picture">
-                                <img src="assets/icons/profile-pic.png" alt="Profile picture">
+                                <img src="/resources/icons/profile-pic.png" alt="Profile picture">
                             </div>
                             <div class="profile-text">
                                 <h5>John Snow</h5>

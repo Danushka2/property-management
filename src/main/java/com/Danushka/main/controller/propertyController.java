@@ -10,4 +10,10 @@ public class propertyController {
 	public String hello() {
 		return "index";
 	}
+	
+	@GetMapping("/pro")
+	public String testingProperty() {
+		return "owner-properties";
+	}
+	
 }
