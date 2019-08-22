@@ -16,4 +16,9 @@ public class propertyController {
 		return "owner-properties";
 	}
 	
+	@GetMapping("/full")
+	public String allProperties() {
+		return "owner-properties-full";
+	}
+	
 }
