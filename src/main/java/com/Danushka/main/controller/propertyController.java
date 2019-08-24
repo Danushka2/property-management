@@ -21,4 +21,9 @@ public class propertyController {
 		return "owner-properties-full";
 	}
 	
+	@GetMapping("/all")
+	public String allPropertiesListView() {
+		return "all-properties";
+	}
+	
 }

@@ -145,3 +145,8 @@
 .page-link{
     color: #2c305d;
 }
+
+.list-actions li {
+    display: inline-block;
+    margin-right: 10px;
+}
