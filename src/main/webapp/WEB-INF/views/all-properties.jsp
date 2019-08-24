@@ -12,9 +12,9 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700,900&display=swap" rel="stylesheet">
 
     <!-- Styles -->
-    <link rel="stylesheet" href="assets/css/main.css">
-    <link rel="stylesheet" href="assets/css/dashboard.css">
-    <link rel="stylesheet" href="assets/css/owner-property.css">
+    <link rel="stylesheet" href="/resources/css/main.css">
+    <link rel="stylesheet" href="/resources/css/dashboard.css">
+    <link rel="stylesheet" href="/resources/css/owner-property.css">
 
     <title>Admin</title>
 </head>
@@ -25,30 +25,32 @@
                     <div class="left-panel">
                         <div class="wrapper-profile">
                             <div class="profile-picture">
-                                <img src="assets/icons/profile-pic.png" alt="Profile picture">
+                                <img src="/resources/icons/profile-pic.png" alt="Profile picture">
                             </div>
                             <div class="profile-text">
                                 <h5>John Snow</h5>
                                 <p>Admin</p>
                             </div>
                             <div class="profile-notification">
-                                <img src="assets/icons/notification-icon.png" alt="Notification Icon">
+                                <img src="/resources/icons/notification-icon.png" alt="Notification Icon">
                             </div>
                         </div>
 
                         <div class="wrapper-menu">
                             <ul>
-                                <a href=""><li><img src="assets/icons/dashboard-icon.png" alt="Dashboard Icon">Dashboard</li></a>
-                                <a href=""><li class="active"><img src="assets/icons/property-icon.png" alt="Properties Icon">Properties</li></a>
-                                <a href=""><li><img src="assets/icons/booking-icon.png" alt="Bookings Icon">Bookings</li></a>
-                                <a href="all-promotions.html"><li><img src="assets/icons/promotions-icon.png" alt="Promotions Icon">Promotions</li></a>
-                                <a href=""><li><img src="assets/icons/payment-icon.png" alt="Payment Icon">Payments</li></a>
-                                <a href=""><li><img src="assets/icons/support-icon.png" alt="Support Icon">Support</li></a>
+                                <a href=""><li><img src="/resources/icons/dashboard-icon.png" alt="Dashboard Icon">Dashboard</li></a>
+                                <a href=""><li class="active"><img src="/resources/icons/property-icon.png" alt="Properties Icon">Properties</li></a>
+                                <a href="users.html"><li><img src="/resources/icons/users-icon.png" alt="Users Icon">Users</li></a>
+                                <a href=""><li><img src="/resources/icons/booking-icon.png" alt="Bookings Icon">Bookings</li></a>
+                                <a href="all-promotions.html"><li><img src="/resources/icons/promotions-icon.png" alt="Promotions Icon">Promotions</li></a>
+								<a href=""><li><img src="/resources/icons/content-management-icon.png" alt="Contemtn Management Icon">Content Management</li></a>                                
+                                <a href=""><li><img src="/resources/icons/payment-icon.png" alt="Payment Icon">Payments</li></a>
+                                <a href=""><li><img src="/resources/icons/support-icon.png" alt="Support Icon">Support</li></a>
                             </ul>
                         </div>
 
                         <div class="wrapper-help">
-                            <a href=""><img src="assets/icons/help-icon.png" alt="Help icon">Help</a>
+                            <a href=""><img src="/resources/icons/help-icon.png" alt="Help icon">Help</a>
                         </div>
                     </div>
                     <div class="right-panel">
@@ -86,9 +88,9 @@
 									
                                         <td>
                                             <ul class="list-actions">
-                                                <a href=""><li><img src="assets/icons/home-060-edit-512.png" width="20px" height="20px" alt="Edit user icon "></li></a>
-												<a href=""><li><img src="assets/icons/active-status.png" width="20px" height="20px" alt="Active status icon "></li></a>
-                                                <a href="all-promotion.html"><li><img src="assets/icons/delete-icon.png" alt="Delete user icon"></li></a>
+                                                <a href=""><li><img src="/resources/icons/home-060-edit-512.png" width="20px" height="20px" alt="Edit user icon "></li></a>
+												<a href=""><li><img src="/resources/icons/active-status.png" width="20px" height="20px" alt="Active status icon "></li></a>
+                                                <a href="all-promotion.html"><li><img src="/resources/icons/delete-icon.png" alt="Delete user icon"></li></a>
                                             </ul>
                                         </td>
                                     </tr>
@@ -106,9 +108,9 @@
 										
 				                        <td>
                                             <ul class="list-actions">
-                                                <a href=""><li><img src="assets/icons/home-060-edit-512.png" width="20px" height="20px" alt="Edit user icon "></li></a>
-                                                <a href=""><li><img src="assets/icons/active-status.png" width="20px" height="20px" alt="Active status icon "></li></a>
-                                                <a href=""><li><img src="assets/icons/delete-icon.png" alt="Delete user icon"></li></a>
+                                                <a href=""><li><img src="/resources/icons/home-060-edit-512.png" width="20px" height="20px" alt="Edit user icon "></li></a>
+                                                <a href=""><li><img src="/resources/icons/active-status.png" width="20px" height="20px" alt="Active status icon "></li></a>
+                                                <a href=""><li><img src="/resources/icons/delete-icon.png" alt="Delete user icon"></li></a>
                                             </ul>
                                         </td>
                                     </tr>
