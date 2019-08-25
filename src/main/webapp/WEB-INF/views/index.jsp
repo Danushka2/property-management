@@ -25,11 +25,11 @@
     <h1 id="para">Home Page</h1>
 
 
-    <div class="container text-left" id="tasksDiv">
+    <div>
         <c:forEach var="property" items="${properties}">	
                 
-            <h4>${property.id}</h4>
-            <h6>${property.city}</h6>
+            <h4>${property.getId()}</h4>
+            <h6>${property.getCity()}</h6>
 
             <br>
             
