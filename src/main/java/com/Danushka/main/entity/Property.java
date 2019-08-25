@@ -20,11 +20,11 @@ public class Property {
 	@Column(name="owner_id")
 	private int ownerId;
 
-	@Column(name="address1")
-	private String address1;
+	@Column(name="address_one")
+	private String addressOne;
 
-	@Column(name="address2")
-	private String address2;
+	@Column(name="address_two")
+	private String addressTwo;
 	
 	@Column(name="city")
 	private String city;
@@ -59,6 +59,24 @@ public class Property {
 	@Column(name="other_facilities")
 	private String otherFacilities;
 
+	public Property() {
+		super();
+		this.id = 0;
+		this.ownerId = 0;
+		this.addressOne = "";
+		this.addressTwo = "";
+		this.city = "";
+		PropertyType = "";
+		this.monthlyPayment = "";
+		this.keyMoney = "";
+		this.noOfRooms = 0;
+		this.airCondition = "";
+		this.parking = "";
+		this.timePeriod = "";
+		this.status = "";
+		this.description = "";
+		this.otherFacilities = "";
+	}
 	
 	
 	public Property(int id, int ownerId, String address1, String address2, String city, String propertyType,
@@ -67,8 +85,8 @@ public class Property {
 		super();
 		this.id = id;
 		this.ownerId = ownerId;
-		this.address1 = address1;
-		this.address2 = address2;
+		this.addressOne = address1;
+		this.addressTwo = address2;
 		this.city = city;
 		PropertyType = propertyType;
 		this.monthlyPayment = monthlyPayment;
@@ -108,26 +126,26 @@ public class Property {
 
 
 
-	public String getAddress1() {
-		return address1;
+	public String getAddressOne() {
+		return addressOne;
 	}
 
 
 
-	public void setAddress1(String address1) {
-		this.address1 = address1;
+	public void setAddressOne(String addressOne) {
+		this.addressOne = addressOne;
 	}
 
 
 
-	public String getAddress2() {
-		return address2;
+	public String getAddressTwo() {
+		return addressTwo;
 	}
 
 
 
-	public void setAddress2(String address2) {
-		this.address2 = address2;
+	public void setAddressTwo(String addressTwo) {
+		this.addressTwo = addressTwo;
 	}
 
 
