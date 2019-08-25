@@ -26,10 +26,10 @@
 
 
     <div class="container text-left" id="tasksDiv">
-        <c:forEach var="user" items="${users }">	
+        <c:forEach var="property" items="${properties}">	
                 
-            <h4>${user.name}</h4>
-            <h6>${user.content}</h6>
+            <h4>${property.id}</h4>
+            <h6>${property.city}</h6>
 
             <br>
             
