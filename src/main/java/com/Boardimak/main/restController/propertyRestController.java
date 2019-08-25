@@ -36,6 +36,7 @@ public class propertyRestController {
 	}
 
 	@PostMapping("/property")
+	@ResponseBody
 	public void saveProertyJSON(@RequestBody Property propertyOBJ) {
 		this.property = propertyOBJ;
 		propertyRepo.save(property);
