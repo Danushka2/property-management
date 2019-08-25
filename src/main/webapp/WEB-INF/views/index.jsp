@@ -1,9 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Cache-Control" content="no-cache">
+<meta http-equiv="Expires" content="sat, 01 Dec 2001 00:00:00 GMT">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>Add-Property</title>
 
@@ -18,6 +23,22 @@
 <body>
 <div class="container">
     <h1 id="para">Home Page</h1>
+
+
+    <div class="container text-left" id="tasksDiv">
+        <c:forEach var="user" items="${users }">	
+                
+            <h4>${user.name}</h4>
+            <h6>${user.content}</h6>
+
+            <br>
+            
+        </c:forEach>
+    </div>	
+
+
+
+
 </div>
 </body>
 </html>
