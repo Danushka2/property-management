@@ -66,7 +66,7 @@ public class propertyRestController {
 		return searchedProp;
 	}
 
-	//testing sasika's functions
+	//testing CRUD functions
 	@GetMapping("/test")
 	public String showCity(HttpServletRequest request) {
 		
@@ -78,11 +78,9 @@ public class propertyRestController {
 		return "all-properties";
 	}
 	
-	//---------------
 	@PostMapping("/save-property")
 	public String registerUser(@ModelAttribute Property newProperty,BindingResult bindingResult,HttpServletRequest request) {
 		propertyRepo.save(newProperty);
-		//return "all-properties";
 		return "redirect:/owner/test";
 	}
 	

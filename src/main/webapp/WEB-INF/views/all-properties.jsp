@@ -120,8 +120,8 @@
         </div>
 
   
-  <!-- Modal -->
-  <div class="modal fade add-property-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+ <!-- Modal -->
+ <div class="modal fade add-property-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -132,17 +132,17 @@
         </div>
         <div class="modal-body">
                
-                <form class="modal-form">
+                <form class="modal-form" method="POST" action="/owner/save-property">
                         <div class="row">
                             <div class="col-md-4">
                                <div class="form-group row">
-                                 <input type="text" class="col-sm-11 " id="Int1" placeholder="Property Owner ID">
+                                 <input type="text" class="col-sm-11 " id="propertyModal1" name="ownerId" value="${newProperty.ownerId}" placeholder="Property Owner ID">
                                </div>
                             </div>
                             <div class="col-md-8">
                                 <div class="form-group row">
                                     <h6 class="col-form-label col-sm-4">Property Type:</h6>
-                                        <select class="form-control property-area col-sm-8" id="exampleFormControlSelect1">
+                                        <select class="form-control property-area col-sm-8" id="propertyModal2">
                                             <option>Room</option>
                                             <option>House</option>
                                             <option>Apartment</option>
@@ -154,41 +154,41 @@
                        <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group row">
-                                    <input type="text" class="col-sm-11" id="Input1" placeholder="Address 1">
+                                    <input type="text" class="col-sm-11" id="propertyModal3" name="addressOne" value="${newProperty.addressOne}" placeholder="Address 1">
                                 </div>   
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group row">
-                                    <input type="text" class="col-sm-11" id="Input1" placeholder="Address 2">
+                                    <input type="text" class="col-sm-11" id="propertyModal4" name="addressTwo" value="${newProperty.addressTwo}" placeholder="Address 2">
                                 </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-4">
                                 <div class="form-group row">
-                                    <input type="text" class="col-sm-11" id="Input2" placeholder="City">
+                                    <input type="text" class="col-sm-11" id="propertyModal5" name="city" value="${newProperty.city}" placeholder="City">
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="form-group row">
-                                    <input type="text" class="col-sm-11" id="Input2" placeholder="Key Money">
+                                    <input type="text" class="col-sm-11" id="propertyModal6" name="keyMoney" value="${newProperty.keyMoney}" placeholder="Key Money">
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="form-group row">
-                                    <input type="text" class="col-sm-11" id="Input2" placeholder="Monthly Rental">
+                                    <input type="text" class="col-sm-11" id="propertyModal7" name="monthlyPayment" value="${newProperty.monthlyPayment}" placeholder="Monthly Rental">
                                 </div>   
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-3">
                                 <div class="form-group row">
-                                      <input type="text" class="col-sm-11" id="Input2" placeholder="No of Rooms">
+                                      <input type="text" class="col-sm-11" id="propertyModal8" name="noOfRooms" value="${newProperty.noOfRooms}" placeholder="No of Rooms">
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group row">
-                                    <input type="text" class="col-sm-11" id="Input3" placeholder="Time Period">
+                                    <input type="text" class="col-sm-11" id="propertyModal9" name="timePeriod" value="${newProperty.timePeriod}" placeholder="Time Period">
                                 </div>
                             </div>
                             <div class="col-md-3">
@@ -202,11 +202,11 @@
                                                 <h6 class="col-form-label col-sm-4">Air Condition:</h6>
                                                <div class="col-sm-8">
                                                 <div class="form-check-inline">
-                                                     <input class="form-check-input" type="radio" name="airC" id="airC" value="option1">
+                                                     <input class="form-check-input" type="radio" name="airC" id="airC1" value="option1">
                                                       <label class="form-check-label" for="gridRadios1">Yes</label>
                                                 </div>
                                                    <div class="form-check-inline">
-                                                      <input class="form-check-input" type="radio" name="airC" id="airC" value="option2">
+                                                      <input class="form-check-input" type="radio" name="airC" id="airC2" value="option2">
                                                       <label class="form-check-label" for="gridRadios2">No</label>
                                                 </div>       
                                               </div>
@@ -234,12 +234,12 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group row">
-                                    <textarea class="col-sm-11 property-area" placeholder="Description" id="exampleFormControlTextarea1" rows="2"></textarea>
+                                    <textarea class="col-sm-11 property-area" placeholder="Description" name="description" value="${newProperty.description}" id="propertyModal10" rows="2"></textarea>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group row">
-                                    <textarea class="col-sm-11 property-area" placeholder="Other Facilities" id="exampleFormControlTextarea3" rows="2"></textarea>
+                                    <textarea class="col-sm-11 property-area" placeholder="Other Facilities" name="otherFacilities" value="${newProperty.otherFacilities}" id="propertyModal11" rows="2"></textarea>
                                 </div>
                             </div>
                         </div>
@@ -247,7 +247,7 @@
                             <div class="col-md-12">
                                 <div class="form-group row">
                                     <h6 class="col-form-label col-sm-3">Picture of Property</h6>
-                                    <input type="file" class="form-control-file col-sm-8" id="exampleFormControlFile1">
+                                    <input type="file" class="form-control-file col-sm-8" id="propertyPicture">
                                 </div>
                             </div>
                         </div>
