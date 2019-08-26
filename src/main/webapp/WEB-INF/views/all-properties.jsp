@@ -107,28 +107,6 @@
                                     
                                     </c:forEach>
                                     
-                                    
-                                    
-                                      <tr>
-                                        <td>
-                                             <h6 class = "PropID">P-00002</h6>
-                                        </td>
-										 <td>
-                                            <p>Danushka Nuwan</p>
-                                        </td>
-										<td><p class = "txt-red">Not Active</p></td>
-										<td><p>6 S. Bohemia St.<br>
-                                            Hudson, NH 03051</p></td>
-                                        <td><p>0771234567</p></td>
-										
-				                        <td>
-                                            <ul class="list-actions">
-                                                <a href=""><li><img src="/resources/icons/home-060-edit-512.png" width="20px" height="20px" alt="Edit user icon "></li></a>
-                                                <a href=""><li><img src="/resources/icons/active-status.png" width="20px" height="20px" alt="Active status icon "></li></a>
-                                                <a href=""><li><img src="/resources/icons/delete-icon.png" alt="Delete user icon"></li></a>
-                                            </ul>
-                                        </td>
-                                    </tr>
                                 </tbody>
                             </table>
 

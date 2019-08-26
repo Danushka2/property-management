@@ -73,7 +73,7 @@ public class Property {
 		this.airCondition = "";
 		this.parking = "";
 		this.timePeriod = "";
-		this.status = "";
+		this.status = "Active";
 		this.description = "";
 		this.otherFacilities = "";
 	}
