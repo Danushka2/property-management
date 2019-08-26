@@ -22,6 +22,7 @@
     <link rel="stylesheet" href="/resources/css/main.css">
     <link rel="stylesheet" href="/resources/css/dashboard.css">
     <link rel="stylesheet" href="/resources/css/owner-property.css">
+    <link rel="stylesheet" href="/resources/css/toggle-switch.css">
 
     <title>Admin</title>
 </head>
@@ -84,7 +85,7 @@
                                 
                                 <c:forEach var="property" items="${properties}">
                                 
-                                    <tr>
+                                    <tr class="prop-table">
                                         <td>
                                             <h6 class = "PropID">${property.getId()}</h6>
                                         </td>
@@ -98,9 +99,22 @@
 									
                                         <td>
                                             <ul class="list-actions">
-                                                <a href=""><li><img src="/resources/icons/home-060-edit-512.png" width="20px" height="20px" alt="Edit user icon "></li></a>
-												<a href=""><li><img src="/resources/icons/active-status.png" width="20px" height="20px" alt="Active status icon "></li></a>
-                                                <a href="all-promotion.html"><li><img src="/resources/icons/delete-icon.png" alt="Delete user icon"></li></a>
+                                                <a href="">
+                                                    <li>
+                                                        <img src="/resources/icons/home-edit-icon.png" width="22px" height="22px" alt="Edit user icon ">
+                                                    </li>
+                                                </a>
+                                                <li>
+                                                    <label class="switch">
+                                                        <input type="checkbox">
+                                                        <span class="slider round"></span>
+                                                    </label>
+                                                </li>
+                                                <a href="/owner/delete-property?id=${property.id}">
+                                                    <li>
+                                                        <img src="/resources/icons/delete-prop-icon.png" width="28px" height="28px" alt="Delete user icon">
+                                                    </li>
+                                                </a>
                                             </ul>
                                         </td>
                                     </tr>
