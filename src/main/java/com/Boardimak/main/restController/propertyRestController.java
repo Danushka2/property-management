@@ -82,7 +82,8 @@ public class propertyRestController {
 	@PostMapping("/save-property")
 	public String registerUser(@ModelAttribute Property newProperty,BindingResult bindingResult,HttpServletRequest request) {
 		propertyRepo.save(newProperty);
-		return "all-properties";
+		//return "all-properties";
+		return "redirect:/owner/test";
 	}
 	
 
