@@ -1,8 +1,15 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!doctype html>
 <html lang="en">
     <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="Pragma" content="no-cache">
+	<meta http-equiv="Cache-Control" content="no-cache">
+	<meta http-equiv="Expires" content="sat, 01 Dec 2001 00:00:00 GMT">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
@@ -74,16 +81,19 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+                                
+                                <c:forEach var="property" items="${properties}">
+                                
                                     <tr>
                                         <td>
-                                            <h6 class = "PropID">P-00001</h6>
+                                            <h6 class = "PropID">${property.getId()}</h6>
                                         </td>
 										  <td>
                                             <p>Danushka Nuwan</p>
                                         </td>
 										<td><p class = "txt-green">Active</p></td>
-										<td><p>8442 West Foxrun Court <br>
-                                            Port Richey, FL 34668</p></td>
+										<td><p>${property.getAddressOne()} <br>
+                                            ${property.getAddressTwo()}, ${property.getCity()}</p></td>
                                         <td><p>0771234567</p></td>
 									
                                         <td>
@@ -94,6 +104,11 @@
                                             </ul>
                                         </td>
                                     </tr>
+                                    
+                                    </c:forEach>
+                                    
+                                    
+                                    
                                       <tr>
                                         <td>
                                              <h6 class = "PropID">P-00002</h6>

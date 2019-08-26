@@ -73,7 +73,7 @@ public class propertyRestController {
 				properties.add(propertyObject);
 			}
 		request.setAttribute("properties",properties);
-		return "index";
+		return "all-properties";
 	}
 
 
