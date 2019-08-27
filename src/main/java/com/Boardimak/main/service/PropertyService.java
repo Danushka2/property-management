@@ -1,11 +1,15 @@
 package com.Boardimak.main.service;
 
+import java.awt.print.Pageable;
 import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -39,6 +43,33 @@ public class PropertyService {
 	public void deleteProperty(int id) {
 		propertyRepo.deleteById(id);	
 	}
-
+	
+	//---------------
+	/*
+	public List<Property> showPageByPage() {
+		int page = 0;
+		int limit = 5;
+	    Pageable pageable = (Pageable) new PageRequest(page, limit);
+	    Page<Property> modelPage = propertyRepo.findAll(pageable);
+	    
+	    while (true) {
+	        for (Property model : modelPage.getContents()) {
+	            processAwesomeModel(model);
+	        }
+	        if (!modelPage.hasNext()) {
+	            break;
+	        }
+	        pageable = modelPage.nextPageable();
+	        modelPage = propertyRepo.findAll(pageable);
+	    }  
+	}
+	*/
+	
+	
+	
+	
+	
+	
+	
 	
 }

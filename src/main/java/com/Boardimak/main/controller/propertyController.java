@@ -38,9 +38,9 @@ public class propertyController {
 		return "owner-properties-full";
 	}
 	
-	@GetMapping("/all")
-	public String allPropertiesListView() {
-		return "all-properties";
+	@GetMapping("/home")
+	public String allPropertiesView() {
+		return "home-page";
 	}
 	
 	@GetMapping("/owner/property")
@@ -61,7 +61,6 @@ public class propertyController {
 		return "redirect:/owner/property";
 	}
 
-	//testing images
 	@GetMapping("/owner/my-properties")
 	public String showPropImages(HttpServletRequest request) {
 		request.setAttribute("properties",pService.showAll());
