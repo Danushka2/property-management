@@ -22,6 +22,7 @@
     <link rel="stylesheet" href="/resources/css/main.css">
     <link rel="stylesheet" href="/resources/css/dashboard.css">
     <link rel="stylesheet" href="/resources/css/owner-property.css">
+    <link rel="stylesheet" href="/resources/css/toggle-switch.css">
 
     <title>Owner</title>
 </head>
@@ -66,16 +67,27 @@
                         </div>
 
                         <div class="dashboard-body">
-                          
-                            <div class="card">
-                                <img class="card-img-top" src="/resources/images/propertyImg1.png" alt="Propertie image">
-                                <div class="card-body">
-                                    <h6>ID: <span class="card-tags">105246</span></h6>
-                                    <h6>Price: <span class="card-tags">5000.00/price</span></h6>
-                                    <h6>Status: <span class="card-tags">Active</span></h6> 
-                                </div>
-                              </div>
                             
+                          <c:forEach var="property" items="${properties}">
+                          	<c:if test = "${property.id > 10000}">
+                            	<div class="card">
+                                	<img class="card-img-top" src="/resources/images/propertyImg1.png" alt="Propertie image">
+                                	<div class="card-body">
+                                	    <h6>ID: <span class="card-tags">${property.id}</span></h6>
+                                	    <h6>Price: <span class="card-tags">${property.monthlyPayment}/month</span></h6>
+                                	    <h6>Status: 
+                                	    	<span class="card-tags txt-green">
+                                	    		Active
+                                	    	</span> 
+                                	    	<label class="switch deactivate-checkbox">
+                                        		<input type="checkbox">
+                                            	 	<span class="slider round"></span>
+                                        	</label>
+                                        </h6> 
+                                	</div>
+                            	</div>
+                          	</c:if>
+                          </c:forEach>
                             
                               <nav aria-label="Page navigation">
                                 <ul class="pagination justify-content-center">

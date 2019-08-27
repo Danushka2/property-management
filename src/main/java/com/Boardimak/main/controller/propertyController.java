@@ -61,5 +61,11 @@ public class propertyController {
 		return "redirect:/owner/property";
 	}
 
+	//testing images
+	@GetMapping("/owner/my-properties")
+	public String showPropImages(HttpServletRequest request) {
+		request.setAttribute("properties",pService.showAll());
+		return "owner-properties-full";
+	}
 	
 }

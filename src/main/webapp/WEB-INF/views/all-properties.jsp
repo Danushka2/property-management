@@ -21,8 +21,8 @@
     <!-- Styles -->
     <link rel="stylesheet" href="/resources/css/main.css">
     <link rel="stylesheet" href="/resources/css/dashboard.css">
+	<link rel="stylesheet" href="/resources/css/toggle-switch.css">
     <link rel="stylesheet" href="/resources/css/owner-property.css">
-    <link rel="stylesheet" href="/resources/css/toggle-switch.css">
 
     <title>Admin</title>
 </head>
