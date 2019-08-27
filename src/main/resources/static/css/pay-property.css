@@ -1,0 +1,65 @@
+body{
+    background-color: #EDF0F6;
+}
+/**
+Stripe Styles
+ */
+ .StripeElement {
+    box-sizing: border-box;
+  
+    height: 40px;
+  
+    padding: 10px 12px;
+  
+    border: 1px solid #2c305d;
+    border-radius: 4px;
+    background-color: white;
+  
+    box-shadow: 0 1px 3px 0 #e6ebf1;
+    -webkit-transition: box-shadow 150ms ease;
+    transition: box-shadow 150ms ease;
+  }
+  
+  .StripeElement--focus {
+    box-shadow: 0 1px 3px 0 #cfd7df;
+  }
+  
+  .StripeElement--invalid {
+    border-color: #fa755a;
+  }
+  
+  .StripeElement--webkit-autofill {
+    background-color: #fefde5 !important;
+  }
+
+.payment-form{
+    padding: 10% 0;
+    margin: 0 auto;
+}
+
+.red{
+    border: 1px solid red;
+}
+
+.primary{
+    border: 1px solid #2c305d;
+}
+
+.primary::placeholder{
+    color: #aab7c4;
+}
+
+.form-control:focus{
+    border-color: #7784bd; 
+    box-shadow: none; 
+    -webkit-box-shadow: none;
+} 
+
+.has-error .form-control:focus{
+    box-shadow: none; 
+    -webkit-box-shadow: none;
+}
+
+.input-focus{
+    border-color: #7784bd;
+}
