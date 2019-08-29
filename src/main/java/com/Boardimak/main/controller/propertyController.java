@@ -53,16 +53,23 @@ public class propertyController {
 		return "home-page";
 	}
 	
-	@GetMapping("/owner/property")
+	@GetMapping("/admin/property")
 	public String showProperties(HttpServletRequest request) {
 		request.setAttribute("properties",pService.showAll());
 		return "all-properties";
 	}
 	
+	@PostMapping("/admin/property")
+	public String adminSaveObject(@ModelAttribute Property newProperty,BindingResult bindingResult,HttpServletRequest request) {
+		pService.saveProperty(newProperty);
+		return "redirect:/admin/property";
+	}
+	
+	
 	@PostMapping("/owner/property")
 	public String saveObject(@ModelAttribute Property newProperty,BindingResult bindingResult,HttpServletRequest request) {
 		pService.saveProperty(newProperty);
-		return "redirect:/owner/property";
+		return "redirect:/owner/my-properties";
 	}
 	
 	@RequestMapping("/owner/delete-property")

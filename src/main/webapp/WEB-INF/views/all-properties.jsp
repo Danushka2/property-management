@@ -144,7 +144,7 @@
         </div>
         <div class="modal-body">
                
-                <form class="modal-form" method="POST" action="/owner/property">
+                <form class="modal-form" method="POST" action="/admin/property">
                         <div class="row">
                             <div class="col-md-4">
                                <div class="form-group row">
