@@ -131,6 +131,7 @@
     border: 2px solid #2c305d;
     width: 200px;
     margin: 10px;
+    margin-right: 0px;
     display: inline-block; 
 }
 

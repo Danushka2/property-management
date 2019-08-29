@@ -21,10 +21,10 @@
     <!-- Styles -->
     <link rel="stylesheet" href="/resources/css/main.css">
     <link rel="stylesheet" href="/resources/css/dashboard.css">
+	<link rel="stylesheet" href="/resources/css/toggle-switch.css">
     <link rel="stylesheet" href="/resources/css/owner-property.css">
-    <link rel="stylesheet" href="/resources/css/toggle-switch.css">
 
-    <title>Owner</title>
+    <title>Admin</title>
 </head>
     <body>
         <div class="section">
@@ -37,7 +37,7 @@
                             </div>
                             <div class="profile-text">
                                 <h5>John Snow</h5>
-                                <p>Property Owner</p>
+                                <p>Admin</p>
                             </div>
                             <div class="profile-notification">
                                 <img src="/resources/icons/notification-icon.png" alt="Notification Icon">
@@ -47,10 +47,10 @@
                         <div class="wrapper-menu">
                             <ul>
                                 <a href=""><li><img src="/resources/icons/dashboard-icon.png" alt="Dashboard Icon">Dashboard</li></a>
-                                <a href="/owner/my-properties"><li class="active"><img src="/resources/icons/property-icon.png" alt="Properties Icon">Properties</li></a>
+                                <a href="/owner/my-properties"><li><img src="/resources/icons/property-icon.png" alt="Properties Icon">Properties</li></a>
                                 <a href=""><li><img src="/resources/icons/booking-icon.png" alt="Bookings Icon">Bookings</li></a>
                                 <a href="all-promotions.html"><li><img src="/resources/icons/promotions-icon.png" alt="Promotions Icon">Promotions</li></a>
-                      			<a href="/owner/proposal"><li><img src="/resources/icons/proposal.png" alt="Proposal Icon">Proposals</li></a>       
+								<a href="/owner/proposal"><li class="active"><img src="/resources/icons/proposal.png" alt="Proposal Icon">Proposals</li></a>                              
                                 <a href=""><li><img src="/resources/icons/payment-icon.png" alt="Payment Icon">Payments</li></a>
                                 <a href=""><li><img src="/resources/icons/support-icon.png" alt="Support Icon">Support</li></a>
                             </ul>
@@ -68,42 +68,151 @@
                         </div>
 
                         <div class="dashboard-body">
+                          <table class="table table-borderless">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Property ID</th>
+										<th scope="col">User ID</th>
+										<th scope="col">Proposal</th>
+                                        <th scope="col">Actions</th>
+                                     
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                
+                                
+                                     <tr class="prop-table">
+                                        <td>
+                                            <h6 class = "PropID">120012</h6>
+                                        </td>
+										  <td>
+                                            <p>515462</p>
+                                        </td>
+										<td><p>Can I rent your house for 2 years?</p></td>
+									
+                                        <td>
+                                            <ul class="list-actions">
+                                                <li>
+                                                     <img src="/resources/icons/accepte-icon.png" width="28px" height="28px" alt="Delete user icon">
+                                                  </li>
+                                                <li>
+                                                    <img src="/resources/icons/reject-icon.png" width="28px" height="28px" alt="Delete user icon">
+                                                </li>
+                                               	<a href="#">
+                                                  <li>
+                                                      <img src="/resources/icons/delete-prop-icon.png" width="28px" height="28px" alt="Delete icon">
+                                                  </li>
+                                                </a>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                     <tr class="prop-table">
+                                        <td>
+                                            <h6 class = "PropID">120012</h6>
+                                        </td>
+										  <td>
+                                            <p>515462</p>
+                                        </td>
+										<td><p>Can I rent your house for 2 years?</p></td>
+									
+                                        <td>
+                                            <ul class="list-actions">
+                                                <li>
+                                                     <img src="/resources/icons/accepte-icon.png" width="28px" height="28px" alt="Delete user icon">
+                                                  </li>
+                                                <li>
+                                                    <img src="/resources/icons/reject-icon.png" width="28px" height="28px" alt="Delete user icon">
+                                                </li>
+                                               	<a href="#">
+                                                  <li>
+                                                      <img src="/resources/icons/delete-prop-icon.png" width="28px" height="28px" alt="Delete icon">
+                                                  </li>
+                                                </a>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr class="prop-table">
+                                        <td>
+                                            <h6 class = "PropID">120012</h6>
+                                        </td>
+										  <td>
+                                            <p>515462</p>
+                                        </td>
+										<td><p>Can I rent your house for 2 years?</p></td>
+									
+                                        <td>
+                                            <ul class="list-actions">
+                                                <li>
+                                                     <img src="/resources/icons/accepte-icon.png" width="28px" height="28px" alt="Delete user icon">
+                                                  </li>
+                                                <li>
+                                                    <img src="/resources/icons/reject-icon.png" width="28px" height="28px" alt="Delete user icon">
+                                                </li>
+                                               	<a href="#">
+                                                  <li>
+                                                      <img src="/resources/icons/delete-prop-icon.png" width="28px" height="28px" alt="Delete icon">
+                                                  </li>
+                                                </a>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                     <tr class="prop-table">
+                                        <td>
+                                            <h6 class = "PropID">120012</h6>
+                                        </td>
+										  <td>
+                                            <p>515462</p>
+                                        </td>
+										<td><p>Can I rent your house for 2 years? I can pay more key money if you want</p></td>
+									
+                                        <td>
+                                            <ul class="list-actions">
+                                                <li>
+                                                     <img src="/resources/icons/accepte-icon.png" width="28px" height="28px" alt="Delete user icon">
+                                                  </li>
+                                                <li>
+                                                    <img src="/resources/icons/reject-icon.png" width="28px" height="28px" alt="Delete user icon">
+                                                </li>
+                                               	<a href="#">
+                                                  <li>
+                                                      <img src="/resources/icons/delete-prop-icon.png" width="28px" height="28px" alt="Delete icon">
+                                                  </li>
+                                                </a>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                     <tr class="prop-table">
+                                        <td>
+                                            <h6 class = "PropID">120012</h6>
+                                        </td>
+										  <td>
+                                            <p>515462</p>
+                                        </td>
+										<td><p>Can I rent your house for 2 years?</p></td>
+									
+                                        <td>
+                                            <ul class="list-actions">
+                                                <li>
+                                                     <img src="/resources/icons/accepte-icon.png" width="28px" height="28px" alt="Delete user icon">
+                                                  </li>
+                                                <li>
+                                                    <img src="/resources/icons/reject-icon.png" width="28px" height="28px" alt="Delete user icon">
+                                                </li>
+                                               	<a href="#">
+                                                  <li>
+                                                      <img src="/resources/icons/delete-prop-icon.png" width="28px" height="28px" alt="Delete icon">
+                                                  </li>
+                                                </a>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    
+                                </tbody>
+                            </table>
+
+
                             
-                          <c:forEach var="property" items="${properties}">
-                          	<c:if test = "${property.id > 10000}">
-                            	<div class="card">
-                                	<img class="card-img-top" src="/resources/images/propertyImg1.png" alt="Propertie image">
-                                	<div class="card-body">
-                                	    <h6>ID: <span class="card-tags">${property.id}</span></h6>
-                                	    <h6>Price: <span class="card-tags">${property.monthlyPayment}/month</span></h6>
-                                	    <h6>Status: 
-                                	    	<span class="card-tags txt-green">
-                                	    		Active
-                                	    	</span> 
-                                	    	<label class="switch deactivate-checkbox">
-                                        		<input type="checkbox">
-                                            	 	<span class="slider round"></span>
-                                        	</label>
-                                        </h6> 
-                                	</div>
-                            	</div>
-                          	</c:if>
-                          </c:forEach>
                             
-                              <nav aria-label="Page navigation">
-                                <ul class="pagination justify-content-center">
-                                    <li class="page-item disabled">
-                                        <a class="page-link" href="#" tabindex="-1">Previous</a>
-                                    </li>
-                                    <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                    <li class="page-item">
-                                        <a class="page-link" href="#">Next</a>
-                                    </li>
-                                </ul>
-                              </nav>
-                        
                         </div>
                     </div>
                 </div>
@@ -111,8 +220,8 @@
         </div>
 
   
-  <!-- Modal -->
-  <div class="modal fade add-property-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+ <!-- Modal -->
+ <div class="modal fade add-property-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -249,6 +358,7 @@
       </div>
     </div>
   </div>
+
 
 
     <!-- Optional JavaScript -->

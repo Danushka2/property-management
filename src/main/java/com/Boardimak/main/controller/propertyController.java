@@ -28,6 +28,11 @@ public class propertyController {
 		return "index";
 	}
 	
+	@GetMapping("/one")
+	public String singleProperty() {
+		return "property";
+	}
+	
 	@GetMapping("/owner")
 	public String testingProperty() {
 		return "owner-properties";
@@ -65,6 +70,12 @@ public class propertyController {
 	public String showPropImages(HttpServletRequest request) {
 		request.setAttribute("properties",pService.showAll());
 		return "owner-properties-full";
+	}
+	
+	@GetMapping("/owner/proposal")
+	public String showProposals(HttpServletRequest request) {
+		//request.setAttribute("properties",pService.showAll());
+		return "proposal-review";
 	}
 	
 }
