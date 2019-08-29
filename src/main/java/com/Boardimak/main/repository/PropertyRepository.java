@@ -9,5 +9,6 @@ import com.Boardimak.main.model.Property;
 
 public interface PropertyRepository extends JpaRepository<Property, Integer> {
 	
+	Property findAllById(int id);
 
 }

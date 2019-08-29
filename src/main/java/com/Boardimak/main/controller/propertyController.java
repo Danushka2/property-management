@@ -33,6 +33,11 @@ public class propertyController {
 		return "property";
 	}
 	
+	@GetMapping("/edit-property")
+	public String editProperty() {
+		return "edit-property";
+	}
+	
 	@GetMapping("/owner")
 	public String testingProperty() {
 		return "owner-properties";
@@ -64,6 +69,15 @@ public class propertyController {
 	public String deleteProperty(@RequestParam int id,HttpServletRequest request) {
 		pService.deleteProperty(id);
 		return "redirect:/owner/property";
+	}
+	
+	@GetMapping("/owner/edit-property")
+	public String editProperty(@RequestParam int id,HttpServletRequest request) {
+		request.setAttribute("property",pService.getAProperty(id));
+		Property ob = pService.getAProperty(id);
+		System.out.println(ob.getCity());
+		
+		return "edit-property";
 	}
 
 	@GetMapping("/owner/my-properties")

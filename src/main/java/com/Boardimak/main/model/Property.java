@@ -30,7 +30,7 @@ public class Property {
 	private String city;
 
 	@Column(name="type")
-	private String PropertyType;
+	private String type;
 
 	@Column(name="monthly_payment")
 	private String monthlyPayment;
@@ -66,7 +66,7 @@ public class Property {
 		this.addressOne = "";
 		this.addressTwo = "";
 		this.city = "";
-		PropertyType = "";
+		type = "Room";
 		this.monthlyPayment = "";
 		this.keyMoney = "";
 		this.noOfRooms = 0;
@@ -88,7 +88,7 @@ public class Property {
 		this.addressOne = address1;
 		this.addressTwo = address2;
 		this.city = city;
-		PropertyType = propertyType;
+		type = propertyType;
 		this.monthlyPayment = monthlyPayment;
 		this.keyMoney = keyMoney;
 		this.noOfRooms = noOfRooms;
@@ -163,13 +163,13 @@ public class Property {
 
 
 	public String getPropertyType() {
-		return PropertyType;
+		return type;
 	}
 
 
 
 	public void setPropertyType(String propertyType) {
-		PropertyType = propertyType;
+		type = propertyType;
 	}
 
 

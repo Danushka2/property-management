@@ -63,68 +63,129 @@
                     </div>
                     <div class="right-panel">
                         <div class="wrapper-body">
-                            <h3 class="title">All Properties</h3>
-                            <button class="btn-blue btn-add-prop" data-toggle="modal" data-target=".add-property-modal">+Add Property</button>
+                            <h3 class="title">Edit Property</h3>
                             <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
                         </div>
 
                         <div class="dashboard-body">
-                          <table class="table table-borderless">
-                                <thead>
-                                    <tr>
-                                        <th scope="col">Property ID</th>
-										<th scope="col">Owner</th>
-										<th scope="col">Status</th>
-										<th scope="col">Address</th>
-                                        <th scope="col">Contact</th>
-                                        <th scope="col">Actions</th>
-                                     
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                
-                                <c:forEach var="property" items="${properties}">
-                                
-                                    <tr class="prop-table">
-                                        <td>
-                                            <h6 class = "PropID">${property.getId()}</h6>
-                                        </td>
-										  <td>
-                                            <p>Danushka Nuwan</p>
-                                        </td>
-										<td><p class = "txt-green">Active</p></td>
-										<td><p>${property.getAddressOne()} <br>
-                                            ${property.getAddressTwo()}, ${property.getCity()}</p></td>
-                                        <td><p>0771234567</p></td>
-									
-                                        <td>
-                                            <ul class="list-actions">
-                                                  <li>
-                                                  	 <a href="/owner/edit-property?id=${property.id}">
-                                                       <img src="/resources/icons/home-edit-icon.png" width="22px" height="22px" alt="Edit user icon">
-                                                 	 </a>
-                                                  </li>
-                                                <li>
-                                                    <label class="switch">
-                                                        <input type="checkbox">
-                                                        <span class="slider round"></span>
-                                                    </label>
-                                                </li>
-                                               	
-                                                  <li>
-                                                  	  <a href="/owner/delete-property?id=${property.id}">
-                                                      	<img src="/resources/icons/delete-prop-icon.png" width="28px" height="28px" alt="Delete user icon">
-                                               		  </a>
-                                                  </li>
-                                                
-                                            </ul>
-                                        </td>
-                                    </tr>
+                        	<form class="modal-form" method="POST" action="/owner/property">
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <div class="form-group row">
+                                            <input type="text" class="col-sm-11 disabled" id="propertyModal" name="id" value="${property.id}" placeholder="${property.id}" readonly>
+                                        </div>   
+                                    </div>
+                                    <div class="col-md-3">
+                                       <div class="form-group row">
+                                         <input type="text" class="col-sm-11 disabled" id="propertyModal1" name="ownerId" value="${property.ownerId}" placeholder="${property.ownerId}" readonly>
+                                       </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group row">
+                                            <h6 class="col-form-label col-sm-4">Property Type:</h6>
+                                                <select class="form-control property-area col-sm-8" id="propertyModal2">
+                                                    <option>Room</option>
+                                                    <option>House</option>
+                                                    <option>Apartment</option>
+                                                    <option>annexes</option>
+                                                </select>
+                                            </div>
+                                    </div>
+                                </div>
+                               <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group row">
+                                            <input type="text" class="col-sm-11 disabled" id="propertyModal3" name="addressOne" value="${property.addressOne}" placeholder="${property.addressOne}" readonly>
+                                        </div>   
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group row">
+                                            <input type="text" class="col-sm-11 disabled" id="propertyModal4" name="addressTwo" value="${property.addressTwo}" placeholder="${property.addressTwo}" readonly>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="form-group row">
+                                            <input type="text" class="col-sm-11 disabled" id="propertyModal5" name="city" value="${property.city}" placeholder="${property.city}" readonly>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group row">
+                                            <input type="text" class="col-sm-11" id="propertyModal6" name="keyMoney" value="${newProperty.keyMoney}" placeholder="${property.keyMoney}">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group row">
+                                            <input type="text" class="col-sm-11" id="propertyModal7" name="monthlyPayment" value="${newProperty.monthlyPayment}" placeholder="${property.monthlyPayment}">
+                                        </div>   
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <div class="form-group row">
+                                              <input type="text" class="col-sm-11" id="propertyModal8" name="noOfRooms" value="${newProperty.noOfRooms}" placeholder="${property.noOfRooms}">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group row">
+                                            <input type="text" class="col-sm-11" id="propertyModal9" name="timePeriod" value="${newProperty.timePeriod}" placeholder="${property.timePeriod}">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
                                         
-                               </c:forEach>
-                                    
-                                </tbody>
-                            </table>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                            <fieldset class="form-group">
+                                                    <div class="row">
+                                                        <h6 class="col-form-label col-sm-4">Air Condition:</h6>
+                                                       <div class="col-sm-8">
+                                                        <div class="form-check-inline">
+                                                             <input class="form-check-input" type="radio" name="airC" id="airC1" value="option1">
+                                                              <label class="form-check-label" for="gridRadios1">Yes</label>
+                                                        </div>
+                                                           <div class="form-check-inline">
+                                                              <input class="form-check-input" type="radio" name="airC" id="airC2" value="option2">
+                                                              <label class="form-check-label" for="gridRadios2">No</label>
+                                                        </div>       
+                                                      </div>
+                                                </div>
+                                              </fieldset>
+                                    </div>
+                                    <div class="col-md-6">
+                                            <fieldset class="form-group">
+                                                    <div class="row">
+                                                            <h6 class="col-form-label col-sm-4">Parking:</h6>
+                                                       <div class="col-sm-8">
+                                                        <div class="form-check-inline">
+                                                             <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1">
+                                                              <label class="form-check-label" for="gridRadios1">Yes</label>
+                                                        </div>
+                                                           <div class="form-check-inline">
+                                                              <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
+                                                              <label class="form-check-label" for="gridRadios2">No</label>
+                                                        </div>       
+                                                      </div>
+                                                </div>
+                                              </fieldset>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group row">
+                                            <textarea class="col-sm-11 property-area" placeholder="${property.description}" name="description" value="${newProperty.description}" id="propertyModal10" rows="2"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group row">
+                                            <textarea class="col-sm-11 property-area" placeholder="${property.otherFacilities}" name="otherFacilities" value="${newProperty.otherFacilities}" id="propertyModal11" rows="2"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button type="submit" class="btn-blue modal-btn">Update Property</button>
+                             </form>
                         </div>
                     </div>
                 </div>
@@ -270,7 +331,6 @@
       </div>
     </div>
   </div>
-
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

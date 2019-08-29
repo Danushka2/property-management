@@ -3,6 +3,7 @@ package com.Boardimak.main.service;
 import java.awt.print.Pageable;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -38,6 +39,11 @@ public class PropertyService {
 
 	public void saveProperty(Property newProperty) {
 		propertyRepo.save(newProperty);
+	}
+	
+	public Property getAProperty(int id) {
+		Property property = propertyRepo.findAllById(id);
+		return 	property;
 	}
 	
 	public void deleteProperty(int id) {
