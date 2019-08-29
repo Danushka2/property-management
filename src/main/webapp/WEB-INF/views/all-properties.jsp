@@ -112,14 +112,25 @@
                                                 </li>
                                                	
                                                   <li>
-                                                  	  <a href="/owner/delete-property?id=${property.id}">
-                                                      	<img src="/resources/icons/delete-prop-icon.png" width="28px" height="28px" alt="Delete user icon">
-                                               		  </a>
+                                                  	  <button style="margin:0px;padding:0px;" class="btn" onclick="doubleCheck()">
+														<img src="/resources/icons/delete-prop-icon.png" width="26px" height="26px" alt="Edit Property icon ">
+													</button>
                                                   </li>
                                                 
                                             </ul>
                                         </td>
                                     </tr>
+                                    
+                                    <script>
+												function doubleCheck() {
+  													var txt;
+  													if (confirm("Are you sure you want to delete?")) {
+   														 window.location.href = "/admin/delete-property?id=${property.id}";
+ 													 } else {
+  														  txt = "You pressed Cancel!";
+ 													 }
+  												}
+									</script>
                                         
                                </c:forEach>
                                     

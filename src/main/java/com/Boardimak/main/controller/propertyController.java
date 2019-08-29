@@ -59,6 +59,12 @@ public class propertyController {
 		return "all-properties";
 	}
 	
+	@GetMapping("/owner/property")
+	public String ownerShowProperties(HttpServletRequest request) {
+		request.setAttribute("properties",pService.showAll());
+		return "owner-properties-full";
+	}
+	
 	@PostMapping("/admin/property")
 	public String adminSaveObject(@ModelAttribute Property newProperty,BindingResult bindingResult,HttpServletRequest request) {
 		pService.saveProperty(newProperty);
@@ -76,6 +82,12 @@ public class propertyController {
 	public String deleteProperty(@RequestParam int id,HttpServletRequest request) {
 		pService.deleteProperty(id);
 		return "redirect:/owner/property";
+	}
+	
+	@RequestMapping("/admin/delete-property")
+	public String adminDeleteProperty(@RequestParam int id,HttpServletRequest request) {
+		pService.deleteProperty(id);
+		return "redirect:/admin/property";
 	}
 	
 	@GetMapping("/owner/edit-property")

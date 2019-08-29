@@ -74,17 +74,52 @@
                             	<div class="card">
                                 	<img class="card-img-top" src="/resources/images/propertyImg1.png" alt="Propertie image">
                                 	<div class="card-body">
-                                	    <h6>ID: <span class="card-tags">${property.id}</span></h6>
-                                	    <h6>Price: <span class="card-tags">${property.monthlyPayment}/month</span></h6>
-                                	    <h6>Status: 
-                                	    	<span class="card-tags txt-green">
-                                	    		Active
-                                	    	</span> 
-                                	    	<label class="switch deactivate-checkbox">
-                                        		<input type="checkbox">
-                                            	 	<span class="slider round"></span>
-                                        	</label>
-                                        </h6> 
+                                		<div class = "row">
+                                			<div class = "col-sm-8">
+                                	    		<h6>ID: <span class="card-tags">${property.id}</span></h6>
+                                	    	</div>
+                                        	<div class="col-sm-4">
+                                        		<label class="switch deactivate-checkbox">
+                                        			<input type="checkbox">
+                                            		 	<span class="slider round"></span>
+                                        		</label>
+                                        	</div>
+                                        </div>
+                                        <div class = "row">
+                                			<div class = "col-sm-12">
+                                	    		<h6>Price: 
+                                	    			<span class="card-tags">${property.monthlyPayment}/month</span>
+                                	    		</h6>
+                                        	</div>
+                                        </div>
+                                        <div class = "row">
+                                			<div class = "col-sm-12">
+                                	    		<h6>Status: 
+                                	    			<span class="card-tags txt-green">
+                                	    				Active
+                                	    			</span> 
+                                	    			<a style="margin-left:5px;" href="/owner/edit-property?id=${property.id}">
+                                                		 <img src="/resources/icons/home-edit-icon.png" width="20px" height="20px" alt="Edit Property icon">
+                                            		</a>
+                                        	 		<button style="margin:0px;padding:0px;" class="btn" onclick="doubleCheck()">
+														<img src="/resources/icons/delete-prop-icon.png" width="26px" height="26px" alt="Edit Property icon ">
+													</button>
+                                	    		</h6> 
+                                        	
+											<script>
+												function doubleCheck() {
+  													var txt;
+  													if (confirm("Are you sure you want to delete?")) {
+   														 window.location.href = "/owner/delete-property?id=${property.id}";
+ 													 } else {
+  														  txt = "You pressed Cancel!";
+ 													 }
+  												}
+											</script>
+                                        	
+                                        		
+                                            </div>
+                                        </div>
                                 	</div>
                             	</div>
                           	</c:if>
