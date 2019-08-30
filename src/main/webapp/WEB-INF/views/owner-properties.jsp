@@ -96,7 +96,7 @@
                         <div class="row">
                             <div class="col-md-4">
                                <div class="form-group row">
-                                 <input type="text" class="col-sm-11 " id="ownerid" name="" value="${newProperty.ownerId}" placeholder="Property Owner ID" required>
+                                 <input type="number" class="col-sm-11 " id="ownerid" name="" value="${newProperty.ownerId}" placeholder="Property Owner ID" required>
                                </div>
                             </div>
                             <div class="col-md-8">
@@ -143,7 +143,7 @@
                         <div class="row">
                             <div class="col-md-3">
                                 <div class="form-group row">
-                                      <input type="text" class="col-sm-11" id="NoRooms" name="noOfRooms" value="${newProperty.noOfRooms}" placeholder="No of Rooms" required>
+                                      <input type="number" class="col-sm-11" id="NoRooms" name="noOfRooms" value="${newProperty.noOfRooms}" placeholder="No of Rooms" required>
                                 </div>
                             </div>
                             <div class="col-md-6">
