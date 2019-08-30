@@ -96,7 +96,7 @@
                         <div class="row">
                             <div class="col-md-4">
                                <div class="form-group row">
-                                 <input type="text" class="col-sm-11 " id="ownerid" name="ownerId" value="${newProperty.ownerId}" placeholder="Property Owner ID">
+                                 <input type="text" class="col-sm-11 " id="ownerid" name="" value="${newProperty.ownerId}" placeholder="Property Owner ID" required>
                                </div>
                             </div>
                             <div class="col-md-8">
@@ -114,41 +114,41 @@
                        <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group row">
-                                    <input type="text" class="col-sm-11" id="address" name="addressOne" value="${newProperty.addressOne}" placeholder="Address 1">
+                                    <input type="text" class="col-sm-11" id="address" name="addressOne" value="${newProperty.addressOne}" placeholder="Address 1" required>
                                 </div>   
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group row">
-                                    <input type="text" class="col-sm-11" id="propertyModal4" name="addressTwo" value="${newProperty.addressTwo}" placeholder="Address 2">
+                                    <input type="text" class="col-sm-11" id="propertyModal4" name="addressTwo" value="${newProperty.addressTwo}" placeholder="Address 2" required>
                                 </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-4">
                                 <div class="form-group row">
-                                    <input type="text" class="col-sm-11" id="cityId" name="city" value="${newProperty.city}" placeholder="City">
+                                    <input type="text" class="col-sm-11" id="cityId" name="city" value="${newProperty.city}" placeholder="City" required>
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="form-group row">
-                                    <input type="text" class="col-sm-11" id="keymoney" name="keyMoney" value="${newProperty.keyMoney}" placeholder="Key Money">
+                                    <input type="text" class="col-sm-11" id="keymoney" name="keyMoney" value="${newProperty.keyMoney}" placeholder="Key Money" required>
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="form-group row">
-                                    <input type="text" class="col-sm-11" id="payment" name="monthlyPayment" value="${newProperty.monthlyPayment}" placeholder="Monthly Rental">
+                                    <input type="text" class="col-sm-11" id="payment" name="monthlyPayment" value="${newProperty.monthlyPayment}" placeholder="Monthly Rental" required>
                                 </div>   
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-3">
                                 <div class="form-group row">
-                                      <input type="text" class="col-sm-11" id="NoRooms" name="noOfRooms" value="${newProperty.noOfRooms}" placeholder="No of Rooms">
+                                      <input type="text" class="col-sm-11" id="NoRooms" name="noOfRooms" value="${newProperty.noOfRooms}" placeholder="No of Rooms" required>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group row">
-                                    <input type="text" class="col-sm-11" id="time" name="timePeriod" value="${newProperty.timePeriod}" placeholder="Time Period">
+                                    <input type="text" class="col-sm-11" id="time" name="timePeriod" value="${newProperty.timePeriod}" placeholder="Time Period" required>
                                 </div>
                             </div>
                             <div class="col-md-3">
@@ -194,12 +194,12 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group row">
-                                    <textarea class="col-sm-11 property-area" placeholder="Description" name="description" value="${newProperty.description}" id="description" rows="2"></textarea>
+                                    <textarea class="col-sm-11 property-area" placeholder="Description" name="description" value="${newProperty.description}" id="description" rows="2" required></textarea>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group row">
-                                    <textarea class="col-sm-11 property-area" placeholder="Other Facilities" name="otherFacilities" value="${newProperty.otherFacilities}" id="otherFacilities" rows="2"></textarea>
+                                    <textarea class="col-sm-11 property-area" placeholder="Other Facilities" name="otherFacilities" value="${newProperty.otherFacilities}" id="otherFacilities" rows="2" required></textarea>
                                 </div>
                             </div>
                         </div>
