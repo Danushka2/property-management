@@ -79,10 +79,17 @@
                                 	    		<h6>ID: <span class="card-tags">${property.id}</span></h6>
                                 	    	</div>
                                         	<div class="col-sm-4">
-                                        		<label class="switch deactivate-checkbox">
-                                        			<input type="checkbox">
-                                            		 	<span class="slider round"></span>
-                                        		</label>
+                                        	<c:if test = "${property.status == 'Active'}">
+                                        		<a style="margin-left:5px;" href="/owner/property/DeactivateProperty?id=${property.id}">
+                                                		 <img src="/resources/icons/deactivate.png" width="26px" height="26px" alt="Edit Property icon">
+                                            	</a>
+                                        	</c:if>
+                                        	<c:if test = "${property.status == 'Offline'}">
+                                        		<a style="margin-left:5px;" href="/owner/property/ActivateProperty?id=${property.id}">
+                                                		 <img src="/resources/icons/activate.png" width="26px" height="26px" alt="Edit Property icon">
+                                            	</a>
+                                        	</c:if>
+                                        	
                                         	</div>
                                         </div>
                                         <div class = "row">
@@ -95,50 +102,32 @@
                                         <div class = "row">
                                 			<div class = "col-sm-12">
                                 	    		<h6>Status: 
-                                	    			<span class="card-tags txt-green">
-                                	    				Active
-                                	    			</span> 
+                                	    			<c:if test = "${property.status == 'Active'}">
+                                        				<span class="card-tags txt-green">
+                                	    					${property.status}
+                                	    				</span> 
+                                        			</c:if>
+                                        			<c:if test = "${property.status == 'Offline'}">
+                                        				<span class="card-tags txt-green" style="color:red;">
+                                	    					${property.status}
+                                	    				</span> 
+                                        			</c:if>
+                                	    			
                                 	    			<a style="margin-left:5px;" href="/owner/edit-property?id=${property.id}">
                                                 		 <img src="/resources/icons/home-edit-icon.png" width="20px" height="20px" alt="Edit Property icon">
                                             		</a>
-                                        	 		<button style="margin:0px;padding:0px;" class="btn" onclick="doubleCheck()">
-														<img src="/resources/icons/delete-prop-icon.png" width="26px" height="26px" alt="Edit Property icon ">
-													</button>
-                                	    		</h6> 
-                                        	
-											<script>
-												function doubleCheck() {
-  													var txt;
-  													if (confirm("Are you sure you want to delete?")) {
-   														 window.location.href = "/owner/delete-property?id=${property.id}";
- 													 } else {
-  														  txt = "You pressed Cancel!";
- 													 }
-  												}
-											</script>
-                                        	
-                                        		
-                                            </div>
+                                            		
+                                            		<a style="margin-left:5px;" href="/owner/delete-property?id=${property.id}">
+                                                		 <img src="/resources/icons/delete-prop-icon.png" width="26px" height="26px" alt="Delete Property icon">
+                                            		</a>
+                                            	</h6> 
+                                        	</div>
                                         </div>
                                 	</div>
                             	</div>
                           	</c:if>
                           </c:forEach>
                             
-                              <nav aria-label="Page navigation">
-                                <ul class="pagination justify-content-center">
-                                    <li class="page-item disabled">
-                                        <a class="page-link" href="#" tabindex="-1">Previous</a>
-                                    </li>
-                                    <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                    <li class="page-item">
-                                        <a class="page-link" href="#">Next</a>
-                                    </li>
-                                </ul>
-                              </nav>
-                        
                         </div>
                     </div>
                 </div>
@@ -285,6 +274,29 @@
     </div>
   </div>
 
+											<!-- 
+											<script>
+												function doubleCheck() {
+  													var txt;
+  													if (confirm("Are you sure you want to delete?")) {
+   														 window.location.href = "/owner/delete-property?id=${property.id}";
+ 													 } else {
+  														  txt = "You pressed Cancel!";
+ 													 }
+  												}
+												 
+												function changeStatus(){
+												  var c=document.getElementById('cngStatus');
+												  var pId = ${property.id};
+												  if (c.checked) {
+													  window.alert("Deactivated");
+													  window.location.href = "/owner/property/updataStatus?id=${property.id}";
+												  } else { 
+													  window.location.href = "/owner/property/updataStatus?id=${property.id}";
+												  }
+												}
+											</script>
+                                        	 -->
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

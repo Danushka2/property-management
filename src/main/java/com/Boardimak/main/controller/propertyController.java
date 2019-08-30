@@ -89,6 +89,46 @@ public class propertyController {
 		pService.deleteProperty(id);
 		return "redirect:/admin/property";
 	}
+
+	@RequestMapping("/owner/property/DeactivateProperty")
+	public String deactivatePropertyStatus(@RequestParam int id,HttpServletRequest request) {
+	//	request.setAttribute("property",pService.getAProperty(id));
+		Property ob = pService.getAProperty(id);
+		ob.setStatus("Offline");
+		System.out.println(ob);
+		pService.saveProperty(ob);
+		return "redirect:/owner/property";
+	}
+	
+	@RequestMapping("/owner/property/ActivateProperty")
+	public String activatePropertyStatus(@RequestParam int id,HttpServletRequest request) {
+	//	request.setAttribute("property",pService.getAProperty(id));
+		Property ob = pService.getAProperty(id);
+		ob.setStatus("Active");
+		System.out.println(ob);
+		pService.saveProperty(ob);
+		return "redirect:/owner/property";
+	}
+	
+	@RequestMapping("/admin/property/DeactivateProperty")
+	public String deactivateProperty(@RequestParam int id,HttpServletRequest request) {
+	//	request.setAttribute("property",pService.getAProperty(id));
+		Property ob = pService.getAProperty(id);
+		ob.setStatus("Offline");
+		System.out.println(ob);
+		pService.saveProperty(ob);
+		return "redirect:/admin/property";
+	}
+	
+	@RequestMapping("/admin/property/ActivateProperty")
+	public String activateProperty(@RequestParam int id,HttpServletRequest request) {
+	//	request.setAttribute("property",pService.getAProperty(id));
+		Property ob = pService.getAProperty(id);
+		ob.setStatus("Active");
+		System.out.println(ob);
+		pService.saveProperty(ob);
+		return "redirect:/admin/property";
+	}
 	
 	@GetMapping("/owner/edit-property")
 	public String editProperty(@RequestParam int id,HttpServletRequest request) {

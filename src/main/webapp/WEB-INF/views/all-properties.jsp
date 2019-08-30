@@ -92,7 +92,18 @@
 										  <td>
                                             <p>Danushka Nuwan</p>
                                         </td>
-										<td><p class = "txt-green">Active</p></td>
+										<td>
+											<c:if test = "${property.status == 'Active'}">
+                                        		<p class = "txt-green">
+                                	    			${property.status}
+                                	    		</p> 
+                                        	</c:if>
+                                        	<c:if test = "${property.status == 'Offline'}">
+                                        		<p style="color:red;">
+                                	 				${property.status}
+                                	    		</p> 
+                                        	</c:if>
+										</td>
 										<td><p>${property.getAddressOne()} <br>
                                             ${property.getAddressTwo()}, ${property.getCity()}</p></td>
                                         <td><p>0771234567</p></td>
@@ -105,22 +116,27 @@
                                                  	 </a>
                                                   </li>
                                                 <li>
-                                                    <label class="switch">
-                                                        <input type="checkbox">
-                                                        <span class="slider round"></span>
-                                                    </label>
+                                                    <c:if test = "${property.status == 'Active'}">
+                                        				<a style="margin-left:5px;" href="/admin/property/DeactivateProperty?id=${property.id}">
+                                                			 <img src="/resources/icons/deactivate.png" width="26px" height="26px" alt="Edit Property icon">
+                                            			</a>
+                                        			</c:if>
+                                        			<c:if test = "${property.status == 'Offline'}">
+                                        				<a style="margin-left:5px;" href="/admin/property/ActivateProperty?id=${property.id}">
+                                                			 <img src="/resources/icons/activate.png" width="26px" height="26px" alt="Edit Property icon">
+                                            			</a>
+                                        			</c:if>
                                                 </li>
-                                               	
-                                                  <li>
-                                                  	  <button style="margin:0px;padding:0px;" class="btn" onclick="doubleCheck()">
-														<img src="/resources/icons/delete-prop-icon.png" width="26px" height="26px" alt="Edit Property icon ">
-													</button>
+                                               	<li>
+                                                  	 <a style="margin-left:5px;" href="/admin/delete-property?id=${property.id}">
+                                                		 <img src="/resources/icons/delete-prop-icon.png" width="26px" height="26px" alt="Delete Property icon">
+                                            		</a>
                                                   </li>
                                                 
                                             </ul>
                                         </td>
                                     </tr>
-                                    
+                                    <!-- 
                                     <script>
 												function doubleCheck() {
   													var txt;
@@ -131,7 +147,7 @@
  													 }
   												}
 									</script>
-                                        
+                                         -->
                                </c:forEach>
                                     
                                 </tbody>
