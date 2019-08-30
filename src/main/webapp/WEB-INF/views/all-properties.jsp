@@ -136,18 +136,7 @@
                                             </ul>
                                         </td>
                                     </tr>
-                                    <!-- 
-                                    <script>
-												function doubleCheck() {
-  													var txt;
-  													if (confirm("Are you sure you want to delete?")) {
-   														 window.location.href = "/admin/delete-property?id=${property.id}";
- 													 } else {
-  														  txt = "You pressed Cancel!";
- 													 }
-  												}
-									</script>
-                                         -->
+                                   
                                </c:forEach>
                                     
                                 </tbody>

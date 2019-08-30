@@ -72,13 +72,15 @@
 <section>
   <div class="container" id="infinite">
         <h5 class="avl-property">AVAILABLE PROPERTIES</h5>
-        <div class="card">
+        	<a href="/one">
+        	<div class="card">
                 <img class="card-img-top" src="/resources/images/pr1.jpg" alt="Propertie image">
                 <div class="card-body">
                     <h6>Colombo</h6>
                     <h6>Rs.5000.00/price</h6>
                 </div>
             </div>
+            </a>
             <div class="card">
                     <img class="card-img-top" src="/resources/images/pr2.jpg" alt="Propertie image">
                 <div class="card-body">
