@@ -96,7 +96,7 @@
                         <div class="row">
                             <div class="col-md-4">
                                <div class="form-group row">
-                                 <input type="text" class="col-sm-11 " id="propertyModal1" name="ownerId" value="${newProperty.ownerId}" placeholder="Property Owner ID">
+                                 <input type="text" class="col-sm-11 " id="ownerid" name="ownerId" value="${newProperty.ownerId}" placeholder="Property Owner ID">
                                </div>
                             </div>
                             <div class="col-md-8">
@@ -114,7 +114,7 @@
                        <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group row">
-                                    <input type="text" class="col-sm-11" id="propertyModal3" name="addressOne" value="${newProperty.addressOne}" placeholder="Address 1">
+                                    <input type="text" class="col-sm-11" id="address" name="addressOne" value="${newProperty.addressOne}" placeholder="Address 1">
                                 </div>   
                             </div>
                             <div class="col-md-6">
@@ -126,17 +126,17 @@
                         <div class="row">
                             <div class="col-md-4">
                                 <div class="form-group row">
-                                    <input type="text" class="col-sm-11" id="propertyModal5" name="city" value="${newProperty.city}" placeholder="City">
+                                    <input type="text" class="col-sm-11" id="cityId" name="city" value="${newProperty.city}" placeholder="City">
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="form-group row">
-                                    <input type="text" class="col-sm-11" id="propertyModal6" name="keyMoney" value="${newProperty.keyMoney}" placeholder="Key Money">
+                                    <input type="text" class="col-sm-11" id="keymoney" name="keyMoney" value="${newProperty.keyMoney}" placeholder="Key Money">
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="form-group row">
-                                    <input type="text" class="col-sm-11" id="propertyModal7" name="monthlyPayment" value="${newProperty.monthlyPayment}" placeholder="Monthly Rental">
+                                    <input type="text" class="col-sm-11" id="payment" name="monthlyPayment" value="${newProperty.monthlyPayment}" placeholder="Monthly Rental">
                                 </div>   
                             </div>
                         </div>
