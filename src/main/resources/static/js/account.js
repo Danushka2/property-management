@@ -7,8 +7,8 @@ var stripe = Stripe('pk_test_fiNmKZ5r1VOsJqi4PLEnRqsu006QD8Fb6K');
 	            var form = document.getElementById('payment-form');
 	            form.addEventListener('submit', function (event) {
                     event.preventDefault();
-                    console.log("working");
                     handleDetails();
+                    console.log("after function");
 	            });
 	            
  	          	//handle card submission
@@ -32,13 +32,26 @@ var stripe = Stripe('pk_test_fiNmKZ5r1VOsJqi4PLEnRqsu006QD8Fb6K');
 	                        // Send the token to your server.
 	                        var token = result.token.id;
                             var email = $('#email').val();
-                            console.log(token);
-	                         $.post(
+	                        $.post(
 	                             "/create-account",
 	                             {token: token, email: email},
 	                             function (data) {
-	                                 alert(data.details);
+	                            	 var r = data;
+	                            	 
+	                            	 if(r.isWorking === 'wrongEmail'){
+	                            		 console.log("check the email address");
+	                            		 $( "#error-types" ).html( "The email should be the one you netered when creating the account" );
+	                            	 }else if(r.isWorking === "hasAccount"){
+	                            		 $( "#error-types" ).html( "You have already registerd an account" );
+	                            	 }else{
+	                            		 window.location.href="http://localhost:8080/";
+	                            	 }
 	                             }, 'json');
 	                    }
                       });
 	          	}
+	            function testFunc(){
+	            	console.log("this is working");
+	            	console.log("final");
+	            	window.location.href="http://localhost:8080/";
+	            }

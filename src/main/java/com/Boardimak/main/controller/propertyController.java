@@ -24,12 +24,14 @@ public class propertyController {
 	PropertyService pService;
 
 	@GetMapping("/")
-	public String hello() {
+	public String hello(HttpServletRequest request) {
+		request.setAttribute("properties",pService.showAll());
 		return "index";
 	}
 	
-	@GetMapping("/one")
-	public String singleProperty() {
+	@GetMapping("/property")
+	public String singleProperty(@RequestParam int id,HttpServletRequest request) {
+		request.setAttribute("property",pService.getAProperty(id));
 		return "property";
 	}
 	

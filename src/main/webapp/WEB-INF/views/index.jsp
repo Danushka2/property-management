@@ -72,72 +72,31 @@
 <section>
   <div class="container" id="infinite">
         <h5 class="avl-property">AVAILABLE PROPERTIES</h5>
-        	<a href="/one">
-        	<div class="card">
-                <img class="card-img-top" src="/resources/images/pr1.jpg" alt="Propertie image">
-                <div class="card-body">
-                    <h6>Colombo</h6>
-                    <h6>Rs.5000.00/price</h6>
-                </div>
-            </div>
-            </a>
-            <div class="card">
-                    <img class="card-img-top" src="/resources/images/pr2.jpg" alt="Propertie image">
-                <div class="card-body">
-                    <h6>Colombo</h6>
-                    <h6>Rs.5000.00/price</h6>
-                </div>
-            </div>
-            <div class="card">
-                    <img class="card-img-top" src="/resources/images/pr3.jpg" alt="Propertie image">
-                <div class="card-body">
-                    <h6>Colombo</h6>
-                    <h6>Rs.5000.00/price</h6>
-                </div>
-            </div>
-            <div class="card">
-                    <img class="card-img-top" src="/resources/images/pr4.jpeg" alt="Propertie image">
-                <div class="card-body">
-                    <h6>Colombo</h6>
-                    <h6>Rs.5000.00/price</h6>
-                </div>
-            </div>
-            <div class="card">
-                    <img class="card-img-top" src="/resources/images/pr2.jpg" alt="Propertie image">
-                <div class="card-body">
-                    <h6>Colombo</h6>
-                    <h6>Rs.5000.00/price</h6>
-                </div>
-            </div>
-            <div class="card">
-                    <img class="card-img-top" src="/resources/images/pr4.jpeg" alt="Propertie image">
-                <div class="card-body">
-                    <h6>Colombo</h6>
-                    <h6>Rs.5000.00/price</h6>
-                </div>
-            </div>
-            <div class="card">
-                    <img class="card-img-top" src="/resources/images/pr4.jpeg" alt="Propertie image">
-                <div class="card-body">
-                    <h6>Colombo</h6>
-                    <h6>Rs.5000.00/price</h6>
-                </div>
-            </div>
-            <div class="card">
-                    <img class="card-img-top" src="/resources/images/pr1.jpg" alt="Propertie image">
-                <div class="card-body">
-                    <h6>Colombo</h6>
-                    <h6>Rs.5000.00/price</h6>
-                </div>
-            </div>
-            <div class="card">
-                    <img class="card-img-top" src="/resources/images/propertyImg1.png" alt="Propertie image">
-                <div class="card-body">
-                    <h6>Colombo</h6>
-                    <h6>Rs.5000.00/price</h6>
-                </div>
-            </div>
-
+        	
+  			 <c:forEach var="property" items="${properties}">
+                          	<c:if test = "${property.status == 'Active'}">
+                          		<a href="/property?id=${property.id}"">
+                            	<div class="card" style="width: 200px;height: 200px;">
+                                	<img class="card-img-top" src="/resources/images/propertyImg1.png" alt="Propertie image">
+                                	<div class="card-body">
+                                		<div class = "row">
+                                			<div class = "col-sm-8">
+                                	    		<h6>City: <span class="card-tags">${property.city}</span></h6>
+                                	    	</div>
+                                        </div>
+                                        <div class = "row">
+                                			<div class = "col-sm-12">
+                                	    		<h6>Price: 
+                                	    			<span class="card-tags">Rs.${property.monthlyPayment}/month</span>
+                                	    		</h6>
+                                        	</div>
+                                        </div>
+                                    </div>
+                            	</div>
+                            	</a>
+                          	</c:if>
+                          </c:forEach>      	
+  
   </div>
 </section>
 

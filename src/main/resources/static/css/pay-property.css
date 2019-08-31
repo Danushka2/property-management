@@ -1,5 +1,5 @@
 body{
-    background-color: #EDF0F6;
+    background-color: #ffffff;
 }
 /**
 Stripe Styles
@@ -64,4 +64,47 @@ Stripe Styles
     border-color: #7784bd;
 }
 
+.register-payment-body{
+  margin: 10% 0;
+}
 
+.form-body{
+  margin-top: 10%;
+}
+
+.btn-center{
+  background: #2c305d;
+    color: #fff;
+    padding: 5px 50px;
+    border: 2px solid #2c305d;
+    border-radius: 5px;
+}
+
+.btn-center:hover {
+  background: none;
+  color: #2c305d;
+  padding: 5px 50px;
+  border: 2px solid #2c305d;
+  border-radius: 5px;
+}
+
+.vl {
+  margin-left:50px;
+  border-left: 1px solid #2c305d;
+  height: 400px;
+}
+
+.vl-reg{
+	margin-left:50px;
+  border-left: 1px solid #2c305d;
+  height: 600px;
+}
+
+.house3{
+  height:20%;
+  margin:6% 10%;
+}
+
+.house3-account{
+  height:30%;
+}

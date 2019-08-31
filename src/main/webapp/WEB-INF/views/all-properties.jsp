@@ -160,11 +160,11 @@
         </div>
         <div class="modal-body">
                
-                <form class="modal-form" method="POST" action="/admin/property">
+                <form class="modal-form" method="POST" action="/owner/property">
                         <div class="row">
                             <div class="col-md-4">
                                <div class="form-group row">
-                                 <input type="text" class="col-sm-11 " id="propertyModal1" name="ownerId" value="${newProperty.ownerId}" placeholder="Property Owner ID">
+                                 <input type="number" min="0" class="col-sm-11 " id="ownerid" name="" value="${newProperty.ownerId}" placeholder="Property Owner ID" required>
                                </div>
                             </div>
                             <div class="col-md-8">
@@ -182,41 +182,41 @@
                        <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group row">
-                                    <input type="text" class="col-sm-11" id="propertyModal3" name="addressOne" value="${newProperty.addressOne}" placeholder="Address 1">
+                                    <input type="text" class="col-sm-11" id="address" name="addressOne" value="${newProperty.addressOne}" placeholder="Address 1" required>
                                 </div>   
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group row">
-                                    <input type="text" class="col-sm-11" id="propertyModal4" name="addressTwo" value="${newProperty.addressTwo}" placeholder="Address 2">
+                                    <input type="text" class="col-sm-11" id="propertyModal4" name="addressTwo" value="${newProperty.addressTwo}" placeholder="Address 2" required>
                                 </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-4">
                                 <div class="form-group row">
-                                    <input type="text" class="col-sm-11" id="propertyModal5" name="city" value="${newProperty.city}" placeholder="City">
+                                    <input type="text" class="col-sm-11" id="cityId" name="city" value="${newProperty.city}" placeholder="City" required>
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="form-group row">
-                                    <input type="text" class="col-sm-11" id="propertyModal6" name="keyMoney" value="${newProperty.keyMoney}" placeholder="Key Money">
+                                    <input type="text" class="col-sm-11" id="keymoney" name="keyMoney" value="${newProperty.keyMoney}" placeholder="Key Money" required>
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="form-group row">
-                                    <input type="text" class="col-sm-11" id="propertyModal7" name="monthlyPayment" value="${newProperty.monthlyPayment}" placeholder="Monthly Rental">
+                                    <input type="text" class="col-sm-11" id="payment" name="monthlyPayment" value="${newProperty.monthlyPayment}" placeholder="Monthly Rental" required>
                                 </div>   
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-3">
                                 <div class="form-group row">
-                                      <input type="text" class="col-sm-11" id="propertyModal8" name="noOfRooms" value="${newProperty.noOfRooms}" placeholder="No of Rooms">
+                                      <input type="number" class="col-sm-11" id="NoRooms" name="noOfRooms" min="0" value="${newProperty.noOfRooms}" placeholder="No of Rooms" required>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group row">
-                                    <input type="text" class="col-sm-11" id="propertyModal9" name="timePeriod" value="${newProperty.timePeriod}" placeholder="Time Period">
+                                    <input type="text" class="col-sm-11" id="time" name="timePeriod" value="${newProperty.timePeriod}" placeholder="Time Period" required>
                                 </div>
                             </div>
                             <div class="col-md-3">
@@ -262,12 +262,12 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group row">
-                                    <textarea class="col-sm-11 property-area" placeholder="Description" name="description" value="${newProperty.description}" id="propertyModal10" rows="2"></textarea>
+                                    <textarea class="col-sm-11 property-area" placeholder="Description" name="description" value="${newProperty.description}" id="description" rows="2" required></textarea>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group row">
-                                    <textarea class="col-sm-11 property-area" placeholder="Other Facilities" name="otherFacilities" value="${newProperty.otherFacilities}" id="propertyModal11" rows="2"></textarea>
+                                    <textarea class="col-sm-11 property-area" placeholder="Other Facilities" name="otherFacilities" value="${newProperty.otherFacilities}" id="otherFacilities" rows="2" required></textarea>
                                 </div>
                             </div>
                         </div>
@@ -280,7 +280,7 @@
                             </div>
                         </div>
 
-                    <button type="submit" class="btn-blue modal-btn">Create a Property</button>
+                    <button type="submit" onclick="formValidation()" class="btn-blue modal-btn">Create a Property</button>
                  </form>
         </div>
       </div>
@@ -290,6 +290,7 @@
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="/resources/js/propertyValidate.js"></script> 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>

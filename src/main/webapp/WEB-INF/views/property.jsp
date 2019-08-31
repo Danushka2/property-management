@@ -68,7 +68,7 @@
                         <img class="d-block w-100" style="width: 600px; height: 80vh;border-radius: 20px;" src="/resources/images/pr1.jpg" alt="First slide">
                       </div>
                       <div class="carousel-item">
-                        <img class="d-block w-100" style="width: 600px;height: 80vh;border-radius: 20px;" src="/resources/images/pr2.jpg" alt="Second slide">
+                        <img class="d-block w-100" style="width: 600px;height: 80vh;border-radius: 20px;" src="/resources/images/pr4.jpeg" alt="Second slide">
                       </div>
                       <div class="carousel-item">
                         <img class="d-block w-100" style="width: 600px;height: 80vh;border-radius: 20px;" src="/resources/images/pr3.jpg" alt="Third slide">
@@ -87,38 +87,37 @@
             <div class="col-md-4">
                 <div style="width: 100%; height: 80vh; margin:auto;background-color: blanchedalmond; border-radius: 10px;">
                     <div style="background-color: rgb(79, 122, 187);height: 50px; text-align: center;font-size: 25px;font-weight: 600">
-                        property ID : <span style="color: blue">1535987</span>
+                        property ID : <span style="color: blue">${property.id}</span>
                     </div>
-                    <div class="row" style="margin-left: 20px;">
-                        <div class="col-sd-12">
-                            address :Lorem Ipsum is simply dummy text of the printing and types
-                        </div>
-                    </div>
-                    <div class="row" style="margin-left: 20px;">
-                        <div class="col-sd-6">type: house</div>
-                        <div class="col-sd-6">no of rooms:</div>
-                    </div>
-                    <div class="row" style="margin-left: 20px;">
-                        <div class="col-sd-6">monthly Payment: Rs:5000.00</div>
-                        <div class="col-sd-6">key money: Rs 10000.00</div>
-                    </div>
-                    <div class="row" style="margin-left: 20px;">
-                        <div class="col-sd-4">Air Condition: Yes</div>
-                        <div class="col-sd-4">Parking : Yes</div>
-                    </div>
-                    Lorem Ipsum is simply dummy text of the printing and types
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley 
-                    of type and scrambled it to make a type specimen book. It has survived not only five centuries, but a
-
+                    
+                    <ul style="margin-left:20px">
+ 						  <li>Address :${property.addressOne},${property.addressTwo},${property.city}</li>
+  						  <li>Key Money:${property.keyMoney}</li>
+						  <li>Monthly Payment:${property.monthlyPayment}</li>
+					</ul>
                     <button class="btn-blue">Book</button>
                     <button class="btn-blue" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
                         Propose
                     </button>
 
                     <div class="collapse" id="collapseExample">
-                      <div class="card card-body">
-                        form for make a proposal
-                      </div>
+                    <div class = "col-md-10">
+                    	<form id = "messageForm" method="POST" action = "/submit/proposal">
+                    		<div class="form-group">
+   							 	<label for="messageHead">Message Heading</label>
+    						 	<input type="text" class="form-control" id="messageHead" name = "message_head" value = "${newProposal.message_head}" placeholder="Message Heading">
+  							</div>
+                      		<div class="form-group">
+  								<label for="message">Message:</label>
+  								<textarea class="form-control" rows="5" id="message" name = "message_body" value = "${newProposal.message_body}"></textarea>
+					  		</div>
+					  		<input type = "hidden" id = "property_id" name = "property_id" value = "2">
+					  		<input type = "hidden" id = "user_id" name = "user_id" value = "2">
+					  		<button class="btn-blue btn-center float-right" id="submitButton" type="submit">
+                                    Send
+                                </button>
+					 	</form>
+					</div>
                     </div>
 
                 </div>

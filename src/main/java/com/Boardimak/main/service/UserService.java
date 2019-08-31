@@ -13,12 +13,17 @@ import com.Boardimak.main.model.*;
 public class UserService {
 
 	@Autowired
-	private Dao jpaRepo;
+	private UserRepo jpaRepo;
+
+	@Autowired
+	private UserRepository userRepository;
 	
-	private ArrayList<Buyer> users = new ArrayList<>();
+	@Autowired 
+	private ProposalRepo proposalrepo;
 	
 	
 	public ArrayList<Buyer> getAllUsers(){
+		ArrayList<Buyer> users = new ArrayList<>();
 		jpaRepo.findAll().forEach(users::add);
 		return users;
 	}
@@ -36,6 +41,40 @@ public class UserService {
 		Buyer id = jpaRepo.findAllByEmail(email);
 		return id;
 	}
+
+	public void createUser(User request) {
+		userRepository.save(request);
+	}
+
+	public User getUserById(int id) {
+		return userRepository.findById(id).orElse(null);
+	}
+
+	public void updateUser(User request) {
+		User user = getUserById(request.getId());
+		if (user != null) {
+			user = User.updateUser(user, request);
+			userRepository.save(user);
+		}
+
+	}
+
+	public void deleteUser(int id) {
+		userRepository.deleteById(id);
+	}
 	
+	/*Sending a proposal from the Parent or the Student*/
+	public void saveProposal(Proposal p) {
+		proposalrepo.save(p);
+	}
 	
+	public ArrayList<Proposal> findProposals() {
+		ArrayList<Proposal> proposals = new ArrayList<>();
+		proposalrepo.findAll().forEach(proposals::add);
+		return proposals;
+	}
+
+	public void deleteProposal(int id) {
+		proposalrepo.deleteById(id);
+	}
 }
