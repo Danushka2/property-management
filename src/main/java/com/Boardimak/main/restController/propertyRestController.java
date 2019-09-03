@@ -1,5 +1,5 @@
 package com.Boardimak.main.restController;
-/*
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -19,6 +19,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import com.Boardimak.main.model.Property;
+import com.Boardimak.main.model.PropertyImages;
+import com.Boardimak.main.repository.PropertyImageRepo;
 import com.Boardimak.main.repository.PropertyRepository;
 
 @Controller
@@ -27,14 +29,16 @@ import com.Boardimak.main.repository.PropertyRepository;
 public class propertyRestController {
 
 	PropertyRepository propertyRepo;
+	PropertyImageRepo imageRepo;
 	Property property;
+	PropertyImages images;
 	
 	@Autowired
 	public propertyRestController(PropertyRepository obj) {
 		this.propertyRepo = obj;
 	}
 
-	@PostMapping("/property")
+	@PostMapping("/propertyRest")
 	@ResponseBody
 	public void saveProertyJSON(@RequestBody Property propertyOBJ) {
 		this.property = propertyOBJ;
@@ -42,13 +46,20 @@ public class propertyRestController {
 	}
 
 	
-	@GetMapping("/property")
+	@GetMapping("/propertyRest")
 	@ResponseBody
 	public List<Property> findProerties() {
 	
 		return propertyRepo.findAll();
 	}
-
+	
+	@GetMapping("/imageRest")
+	@ResponseBody
+	public List<PropertyImages> findImages() {
+	
+		return imageRepo.findAll();
+	}
+/*
 	@GetMapping("/property/{propertyId}")
 	@ResponseBody
 	public Property findProerty(@PathVariable int propertyId) {
@@ -85,7 +96,6 @@ public class propertyRestController {
 		propertyRepo.deleteById(id);
 		return "redirect:/owner/test";
 	}
-
+*/
 
 }
-*/

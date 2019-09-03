@@ -1,10 +1,15 @@
 package com.Boardimak.main.model;
 
+import java.util.Collection;
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -58,6 +63,31 @@ public class Property {
 	
 	@Column(name="other_facilities")
 	private String otherFacilities;
+	
+	@OneToMany(mappedBy="property",
+			   cascade= {CascadeType.PERSIST, CascadeType.MERGE,
+						 CascadeType.DETACH, CascadeType.REFRESH})
+	private List<PropertyImages> images;
+
+	public String getType() {
+		return type;
+	}
+
+
+	public void setType(String type) {
+		this.type = type;
+	}
+
+
+	public List<PropertyImages> getImages() {
+		return images;
+	}
+
+
+	public void setImages(List<PropertyImages> images) {
+		this.images = images;
+	}
+
 
 	public Property() {
 		super();
