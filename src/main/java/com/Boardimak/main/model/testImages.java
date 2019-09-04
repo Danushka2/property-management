@@ -3,9 +3,11 @@ package com.Boardimak.main.model;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Lob;
 import javax.persistence.Table;
+
+import org.hibernate.annotations.GenericGenerator;
 
 @Entity
 @Table(name="test_images")
@@ -13,34 +15,46 @@ public class testImages {
 	
 	
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column(name="image_id")
-	private int id;
+    @GeneratedValue(generator = "uuid")
+    @GenericGenerator(name = "uuid", strategy = "uuid2")
+    private String id;
 	
 	@Column(name="property_id")
 	private int propertyId;
 	
 	@Column(name="image_name")
 	private String imageName;
+	
+	private String fileName;
+
+    private String fileType;
+
+    @Lob
+    private byte[] data;
 
 	public testImages() {
-		this.id = 0;
+		this.id = "";
 		this.propertyId = 0;
 		this.imageName = "";
 	}
 	
-	public testImages(int id, int propertyId, String imageName) {
+	public testImages(int propertyId, String imageName, String fileName, String fileType, byte[] data) {
 		super();
 		this.id = id;
 		this.propertyId = propertyId;
 		this.imageName = imageName;
+		this.fileName = fileName;
+		this.fileType = fileType;
+		this.data = data;
 	}
 
-	public int getId() {
+
+
+	public String getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 
