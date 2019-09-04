@@ -19,8 +19,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import com.Boardimak.main.model.Property;
-import com.Boardimak.main.model.PropertyImages;
-import com.Boardimak.main.repository.PropertyImageRepo;
 import com.Boardimak.main.repository.PropertyRepository;
 
 @Controller
@@ -29,9 +27,7 @@ import com.Boardimak.main.repository.PropertyRepository;
 public class propertyRestController {
 
 	PropertyRepository propertyRepo;
-	PropertyImageRepo imageRepo;
 	Property property;
-	PropertyImages images;
 	
 	@Autowired
 	public propertyRestController(PropertyRepository obj) {
@@ -53,12 +49,6 @@ public class propertyRestController {
 		return propertyRepo.findAll();
 	}
 	
-	@GetMapping("/imageRest")
-	@ResponseBody
-	public List<PropertyImages> findImages() {
-	
-		return imageRepo.findAll();
-	}
 /*
 	@GetMapping("/property/{propertyId}")
 	@ResponseBody
