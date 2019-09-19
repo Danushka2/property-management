@@ -36,16 +36,18 @@ public class testImageServices {
 	
     public testImages storeFile(MultipartFile file) throws Exception {
         // Normalize file name
-        String fileName = StringUtils.cleanPath(file.getOriginalFilename());
-
+    	System.out.println("test1");
+    	String fileName = StringUtils.cleanPath(file.getOriginalFilename());
+    	//String fileName = file.getOriginalFilename();
+    	System.out.println("test1.5");
         try {
             // Check if the file's name contains invalid characters
             if(fileName.contains("..")) {
                 throw new Exception("Sorry! Filename contains invalid path sequence " + fileName);
             }
-
+            System.out.println("test2");
             testImages dbFile = new testImages(0,fileName,fileName, file.getContentType(), file.getBytes());
-
+            System.out.println("test3");
             return imageRepo.save(dbFile);
         } catch (IOException ex) {
             throw new Exception("Could not store file " + fileName + ". Please try again!", ex);

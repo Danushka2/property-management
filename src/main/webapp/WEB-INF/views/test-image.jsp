@@ -68,27 +68,21 @@
                         </div>
 
                         <div class="dashboard-body">
-                        	<form class="modal-form" method="POST" action="/owner/property">
+                        	<form class="modal-form" method="POST" action="/uploadFile">
                                 <div class="row">
                                   <div class="col-md-4">
                                         <div class="form-group row">
-                                    		<input type="text" class="col-sm-11" id="keymoney" name="keyMoney" value="${newProperty.keyMoney}" placeholder="Key Money" required>
+                                    		<input type="text" class="col-sm-11" id="propertyId" name="propertyId" value="${newProperty.keyMoney}" placeholder="Key Money" required>
                                 		</div>
                                     </div>
                                     <div class="col-md-4">
                                         <div class="form-group row">
-                                    		<input type="text" class="col-sm-11" id="payment" name="monthlyPayment" value="${newProperty.monthlyPayment}" placeholder="Monthly Rental" required>
+                                    		<input type="text" class="col-sm-11" id="payment" name="imageName" value="${newProperty.monthlyPayment}" placeholder="Monthly Rental" required>
                                 		</div>  
                                     </div>
                                 </div>
-                                <div class="row">
-                                    <div class="col-md-3">
-                                        <div class="form-group row">
-                                     		 <input type="number" class="col-sm-11" id="NoRooms" name="noOfRooms" value="${newProperty.noOfRooms}" placeholder="No of Rooms" required>
-                                		</div>
-                                    </div>
                                  
-                                <button type="submit" onclick="formValidation()"  class="btn-blue modal-btn">Update Property</button>
+                                <button type="submit" class="btn-blue modal-btn">Upload</button>
                              </form>
                         </div>
                     </div>
