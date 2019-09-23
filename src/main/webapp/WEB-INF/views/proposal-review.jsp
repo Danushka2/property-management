@@ -95,17 +95,17 @@
                                             <ul class="list-actions">
                                                 <li>
                                                   	 <a href="/owner/proposal/accept?id=${proposals.proposal_id}">
-                                                     <img src="../assets/icons/accepte-icon.png" width="28px" height="28px" alt="accpet proposal icon">
+                                                     <img src="/resources/icons/accepte-icon.png" width="28px" height="28px" alt="accpet proposal icon">
                                                  	 </a>
                                                 </li>
                                                 <li>
                                                   	 <a href="/owner/proposal/reject?id=${proposals.proposal_id}">
-                                                    <img src="../assets/icons/reject-icon.png" width="28px" height="28px" alt="reject proposal icon">
+                                                    <img src="/resources/icons/reject-icon.png" width="28px" height="28px" alt="reject proposal icon">
                                                  	 </a>
                                                 </li>
                                                 <li>
                                                   	 <a href="/owner/proposal/delete?id=${proposals.proposal_id}">
-                                                      <img src="../assets/icons/delete-prop-icon.png" width="28px" height="28px" alt="Delete icon">
+                                                      <img src="/resources/icons/delete-prop-icon.png" width="28px" height="28px" alt="Delete icon">
                                                  	 </a>
                                                 </li>
                                             </ul>
