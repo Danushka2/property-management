@@ -143,10 +143,37 @@ public class propertyController {
 		return "owner-properties-full";
 	}
 	
+	
 	@GetMapping("/owner/proposal")
 	public String showProposals(HttpServletRequest request) {
-		//request.setAttribute("properties",pService.showAll());
+		request.setAttribute("proposals",pService.showProposals());
 		return "proposal-review";
+	}
+	
+	/*
+	@RequestMapping("/owner/proposal/accept")
+	public String acceptProposals(@RequestParam int id,HttpServletRequest request) {
+		Proposal ob = pService.getAProposal(id);
+		ob.setStatus("Accepted");
+		System.out.println(ob);
+		pService.saveProposal(ob);
+		return "redirect:/owner/proposal";
+	}
+	
+	@RequestMapping("/owner/proposal/reject")
+	public String rejectProposals(@RequestParam int id,HttpServletRequest request) {
+		Proposal ob = pService.getAProposal(id);
+		ob.setStatus("Rejected");
+		System.out.println(ob);
+		pService.saveProposal(ob);
+		return "redirect:/owner/proposal";
+	}*/
+	
+	@RequestMapping("/owner/proposal/delete")
+	public String deleteProposals(@RequestParam int id,HttpServletRequest request) {
+		
+		pService.deleteProposal(id);
+		return "redirect:/owner/proposal";
 	}
 	
 }

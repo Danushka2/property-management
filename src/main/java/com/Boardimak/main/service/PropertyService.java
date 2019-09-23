@@ -17,16 +17,20 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 
 import com.Boardimak.main.model.Property;
 import com.Boardimak.main.repository.PropertyRepository;
+import com.Boardimak.main.model.Proposal;
+import com.Boardimak.main.repository.ProposalRepo;
 
 @Service
 public class PropertyService {
 
 	PropertyRepository propertyRepo;
-	Property property;
+	ProposalRepo proposalRepo;
+Property property;
 	
 	@Autowired
-	public PropertyService(PropertyRepository pRepo) {
+	public PropertyService(PropertyRepository pRepo,ProposalRepo propRepo) {
 		this.propertyRepo = pRepo;
+		this.proposalRepo = propRepo;
 	}
 
 	public List<Property> showAll() {
@@ -49,6 +53,34 @@ public class PropertyService {
 	public void deleteProperty(int id) {
 		propertyRepo.deleteById(id);	
 	}
+	
+	//proposal ----------------------------------------------------------------------
+	
+		public List<Proposal> showProposals() {
+			List<Proposal> proposals = new ArrayList<>();
+				for(Proposal Object : proposalRepo.findAll()) {
+					proposals.add(Object);
+				}
+				System.out.println("test two");
+			return proposals;
+		}
+		
+		/*
+		public Proposal getAProposal(int id) {
+			Proposal proposal = proposalRepo.findById(id);
+			return 	proposal;
+		}
+		
+		public void saveProposal(Proposal newProposal) {
+			proposalRepo.save(newProposal);
+		}
+		*/
+		
+		public void deleteProposal(int id) {
+			proposalRepo.deleteById(id);	
+		}
+
+	
 	
 	//---------------
 	/*
