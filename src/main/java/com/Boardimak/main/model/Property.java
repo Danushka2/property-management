@@ -9,6 +9,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Lob;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -63,6 +64,16 @@ public class Property {
 	
 	@Column(name="other_facilities")
 	private String otherFacilities;
+
+	@Column(name="image_name")
+	private String imageName;
+	
+	@Column(name="file_type")
+    private String fileType;
+
+    @Lob
+    @Column(name="data")
+    private byte[] data;
 	
 	public String getType() {
 		return type;
@@ -91,6 +102,9 @@ public class Property {
 		this.status = "Active";
 		this.description = "";
 		this.otherFacilities = "";
+		this.imageName ="";
+		this.fileType="";
+		this.data=null;
 	}
 	
 	
@@ -294,7 +308,36 @@ public class Property {
 	public void setOtherFacilities(String otherFacilities) {
 		this.otherFacilities = otherFacilities;
 	}
-	
+
+
+	public String getImageName() {
+		return imageName;
+	}
+
+
+	public void setImageName(String imageName) {
+		this.imageName = imageName;
+	}
+
+
+	public String getFileType() {
+		return fileType;
+	}
+
+
+	public void setFileType(String fileType) {
+		this.fileType = fileType;
+	}
+
+
+	public byte[] getData() {
+		return data;
+	}
+
+
+	public void setData(byte[] data) {
+		this.data = data;
+	}
 	
 
 }

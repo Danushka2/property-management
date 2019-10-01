@@ -1,20 +1,27 @@
 package com.Boardimak.main.controller;
 
+import java.io.ByteArrayInputStream;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
+import org.apache.tomcat.util.http.fileupload.IOUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.Boardimak.main.model.Property;
+import com.Boardimak.main.model.testImages;
 import com.Boardimak.main.service.PropertyService;
 
 @Controller
@@ -66,17 +73,27 @@ public class propertyController {
 		request.setAttribute("properties",pService.showAll());
 		return "owner-properties-full";
 	}
-	
+
 	@PostMapping("/admin/property")
-	public String adminSaveObject(@ModelAttribute Property newProperty,BindingResult bindingResult,HttpServletRequest request) {
-		pService.saveProperty(newProperty);
+	public String adminSaveObject(@RequestParam("imageFile") MultipartFile file,@ModelAttribute Property newProperty,BindingResult bindingResult,HttpServletRequest request) {
+		try {
+			pService.saveProperty(newProperty,file);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		return "redirect:/admin/property";
 	}
-	
+
 	
 	@PostMapping("/owner/property")
-	public String saveObject(@ModelAttribute Property newProperty,BindingResult bindingResult,HttpServletRequest request) {
-		pService.saveProperty(newProperty);
+	public String saveObject(@RequestParam("imageFile") MultipartFile file,@ModelAttribute Property newProperty,BindingResult bindingResult,HttpServletRequest request) {
+		try {
+			pService.saveProperty(newProperty,file);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		return "redirect:/owner/my-properties";
 	}
 	
@@ -91,13 +108,30 @@ public class propertyController {
 		pService.deleteProperty(id);
 		return "redirect:/admin/property";
 	}
+	
+	@RequestMapping(value = "/displayImage/{id}")
+	public void getStudentPhoto(HttpServletResponse response, @PathVariable("id") int id) throws Exception {
+		response.setContentType("image/jpeg");
+
+		List<Property> list = pService.showAll();
+		
+		for(Property property : list) {
+			if(property.getId()==id) {
+			byte[] ph = property.getData();
+			InputStream inputStream = new ByteArrayInputStream(ph);
+			IOUtils.copy(inputStream, response.getOutputStream());
+			}
+		}
+		
+	}
+	
 
 	@RequestMapping("/owner/property/DeactivateProperty")
 	public String deactivatePropertyStatus(@RequestParam int id,HttpServletRequest request) {
 		Property ob = pService.getAProperty(id);
 		ob.setStatus("Offline");
 		System.out.println(ob);
-		pService.saveProperty(ob);
+		pService.updateProperty(ob);
 		return "redirect:/owner/property";
 	}
 	
@@ -106,7 +140,7 @@ public class propertyController {
 		Property ob = pService.getAProperty(id);
 		ob.setStatus("Active");
 		System.out.println(ob);
-		pService.saveProperty(ob);
+		pService.updateProperty(ob);
 		return "redirect:/owner/property";
 	}
 	
@@ -115,7 +149,7 @@ public class propertyController {
 		Property ob = pService.getAProperty(id);
 		ob.setStatus("Offline");
 		System.out.println(ob);
-		pService.saveProperty(ob);
+		pService.updateProperty(ob);
 		return "redirect:/admin/property";
 	}
 	
@@ -124,10 +158,16 @@ public class propertyController {
 		Property ob = pService.getAProperty(id);
 		ob.setStatus("Active");
 		System.out.println(ob);
-		pService.saveProperty(ob);
+		pService.updateProperty(ob);
 		return "redirect:/admin/property";
 	}
 	
+	@PostMapping("/property/update")
+	public String updateProperty(@ModelAttribute Property newProperty,BindingResult bindingResult,HttpServletRequest request) {
+		pService.updateProperty(newProperty);
+		return "redirect:/owner/property";
+	}
+
 	@GetMapping("/owner/edit-property")
 	public String editProperty(@RequestParam int id,HttpServletRequest request) {
 		request.setAttribute("property",pService.getAProperty(id));

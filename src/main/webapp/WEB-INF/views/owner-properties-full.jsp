@@ -72,7 +72,7 @@
                           <c:forEach var="property" items="${properties}">
                           	<c:if test = "${property.id > 10000}">
                             	<div class="card">
-                                	<img class="card-img-top" src="/resources/images/propertyImg1.png" alt="Propertie image">
+                                	<img class="card-img-top" src="/displayImage/${property.id}" alt="Property image">
                                 	<div class="card-body">
                                 		<div class = "row">
                                 			<div class = "col-sm-8">
@@ -147,7 +147,7 @@
         </div>
         <div class="modal-body">
                
-                <form class="modal-form" method="POST" action="/owner/property">
+                <form class="modal-form" method="POST" enctype="multipart/form-data" action="/owner/property">
                         <div class="row">
                             <div class="col-md-4">
                                <div class="form-group row">
@@ -262,7 +262,7 @@
                             <div class="col-md-12">
                                 <div class="form-group row">
                                     <h6 class="col-form-label col-sm-3">Picture of Property</h6>
-                                    <input type="file" class="form-control-file col-sm-8" id="propertyPicture">
+                                    <input type="file" class="form-control-file col-sm-8" name="imageFile" id="imageFile">
                                 </div>
                             </div>
                         </div>

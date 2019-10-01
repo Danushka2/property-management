@@ -69,7 +69,7 @@
 
                         <div class="dashboard-body">
                       
-                      	<img src="/show/${3}"  height="300px" width="500px" alt="testing image 1" />
+                      	<img src="/show/${4}"  height="300px" width="500px" alt="testing image 1" />
                       
                       
                         </div>

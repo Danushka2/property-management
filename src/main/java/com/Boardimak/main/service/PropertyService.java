@@ -1,6 +1,7 @@
 package com.Boardimak.main.service;
 
 import java.awt.print.Pageable;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -14,10 +15,12 @@ import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.Boardimak.main.model.Property;
 import com.Boardimak.main.repository.PropertyRepository;
 import com.Boardimak.main.model.Proposal;
+import com.Boardimak.main.model.testImages;
 import com.Boardimak.main.repository.ProposalRepo;
 
 @Service
@@ -41,8 +44,28 @@ Property property;
 		return properties;
 	}
 
-	public void saveProperty(Property newProperty) {
-		propertyRepo.save(newProperty);
+	public void saveProperty(Property newProperty,MultipartFile file) throws Exception {
+		// Normalize file name
+    	//String fileName = StringUtils.cleanPath(file.getOriginalFilename());
+    	String fileName = file.getOriginalFilename();
+    	System.out.println(fileName);
+        try {
+            // Check if the file's name contains invalid characters
+            if(fileName.contains("..")) {
+                throw new Exception("Sorry! Filename contains invalid path sequence " + fileName);
+            }
+            //testImages dbFile = new testImages(0,fileName,fileName, file.getContentType(), file.getBytes());
+            newProperty.setImageName(fileName);
+            newProperty.setFileType(file.getContentType());
+            newProperty.setData(file.getBytes());
+            propertyRepo.save(newProperty);
+        } catch (IOException ex) {
+            throw new Exception("Could not store file " + fileName + ". Please try again!", ex);
+        }
+	}
+	
+	public void updateProperty(Property property) {
+		propertyRepo.save(property);
 	}
 	
 	public Property getAProperty(int id) {

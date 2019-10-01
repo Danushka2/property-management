@@ -77,7 +77,7 @@
                           	<c:if test = "${property.status == 'Active'}">
                           		<a href="/property?id=${property.id}"">
                             	<div class="card" style="width: 200px;height: 200px;">
-                                	<img class="card-img-top" src="/resources/images/propertyImg1.png" alt="Propertie image">
+                                	<img class="card-img-top" src="/displayImage/${property.id}" alt="Property image">
                                 	<div class="card-body">
                                 		<div class = "row">
                                 			<div class = "col-sm-8">
