@@ -3,6 +3,7 @@ package com.Boardimak.main.model;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Lob;
 import javax.persistence.Table;
@@ -14,11 +15,14 @@ import org.hibernate.annotations.GenericGenerator;
 public class testImages {
 	
 	
+//	@Id
+  //  @GeneratedValue(generator = "uuid")
+ //   @GenericGenerator(name = "uuid", strategy = "uuid2")
 	@Id
-    @GeneratedValue(generator = "uuid")
-    @GenericGenerator(name = "uuid", strategy = "uuid2")
-    private String id;
-	
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@Column(name="id")
+    private int id;
+
 	@Column(name="property_id")
 	private int propertyId;
 	
@@ -33,7 +37,7 @@ public class testImages {
     private byte[] data;
 
 	public testImages() {
-		this.id = "";
+		this.id = 0;
 		this.propertyId = 0;
 		this.imageName = "";
 		this.fileType = "";
@@ -52,11 +56,11 @@ public class testImages {
 
 
 
-	public String getId() {
+	public int getId() {
 		return id;
 	}
 
-	public void setId(String id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 
@@ -76,6 +80,29 @@ public class testImages {
 		this.imageName = imageName;
 	}
 	
+	public byte[] getData() {
+		return data;
+	}
+
+	public void setData(byte[] data) {
+		this.data = data;
+	}
+
+	public String getFileName() {
+		return fileName;
+	}
+
+	public void setFileName(String fileName) {
+		this.fileName = fileName;
+	}
+
+	public String getFileType() {
+		return fileType;
+	}
+
+	public void setFileType(String fileType) {
+		this.fileType = fileType;
+	}
 	
 	
 }

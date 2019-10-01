@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import com.Boardimak.main.model.testImages;
 
 @Repository
-public interface testImageRepo extends JpaRepository<testImages, String>{
+public interface testImageRepo extends JpaRepository<testImages, Integer>{
 
 }

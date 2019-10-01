@@ -1,6 +1,7 @@
 package com.Boardimak.main.restController;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -56,19 +57,19 @@ public class ImageRestController {
                 .collect(Collectors.toList());
     }
 
+	
     @GetMapping("/downloadFile/{fileId}")
-    public ResponseEntity<Resource> downloadFile(@PathVariable String fileId) {
+    public ResponseEntity<Resource> downloadFile(@PathVariable int fileId) {
         // Load file from database
-    	testImages tImageObject = imageService.getFile(fileId);
+    	Optional<testImages> tImageObject = imageService.getFile(fileId);
 
         return ResponseEntity.ok()
                 .contentType(MediaType.parseMediaType(tImageObject.getFileType()))
                 .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"" + tImageObject.getFileName() + "\"")
                 .body(new ByteArrayResource(tImageObject.getData()));
     }
-*/
-	
-	
+
+	*/
 
 
 }

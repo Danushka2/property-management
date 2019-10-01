@@ -51,7 +51,7 @@ public class testImageServices {
         }
     }
 
-    public Optional<testImages> getFile(String fileId) {
+    public Optional<testImages> getFile(int fileId) {
         return imageRepo.findById(fileId);
     }
     
