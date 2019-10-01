@@ -68,19 +68,27 @@
                         </div>
 
                         <div class="dashboard-body">
-                        	<form class="modal-form" method="POST" action="/uploadFile">
+                        	<form class="modal-form" method="POST" enctype="multipart/form-data" action="/uploadFile">
                                 <div class="row">
                                   <div class="col-md-4">
                                         <div class="form-group row">
-                                    		<input type="text" class="col-sm-11" id="propertyId" name="propertyId" value="${newProperty.keyMoney}" placeholder="Key Money" required>
+                                    		<input type="text" class="col-sm-11" id="propertyId" name="propertyId" value="${newProperty.keyMoney}" placeholder="Key Money">
                                 		</div>
                                     </div>
                                     <div class="col-md-4">
                                         <div class="form-group row">
-                                    		<input type="text" class="col-sm-11" id="payment" name="imageName" value="${newProperty.monthlyPayment}" placeholder="Monthly Rental" required>
+                                    		<input type="text" class="col-sm-11" id="payment" name="imageName" value="${newProperty.monthlyPayment}" placeholder="Monthly Rental">
                                 		</div>  
                                     </div>
                                 </div>
+                                <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group row">
+                                    <h6 class="col-form-label col-sm-3">Picture of Property</h6>
+                                    <input type="file" class="form-control-file col-sm-8" name="imagefile" id="imagefile">
+                                </div>
+                            </div>
+                        </div>
                                  
                                 <button type="submit" class="btn-blue modal-btn">Upload</button>
                              </form>

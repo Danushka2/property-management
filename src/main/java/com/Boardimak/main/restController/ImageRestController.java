@@ -38,15 +38,14 @@ public class ImageRestController {
 	}
 
     @PostMapping("/uploadFile")
-    public void uploadFile(@PathVariable MultipartFile file) throws Exception {
-    	System.out.println("test");
-    	testImages tImageObject = imageService.storeFile(file);
+    public void uploadFile(@RequestParam("imagefile") MultipartFile file) throws Exception {
+    	imageService.storeFile(file);
 		
 		
-        String fileDownloadUri = ServletUriComponentsBuilder.fromCurrentContextPath()
+        /*String fileDownloadUri = ServletUriComponentsBuilder.fromCurrentContextPath()
                 .path("/downloadFile/")
                 .path(tImageObject.getId())
-                .toUriString(); 
+                .toUriString(); */
     }
 /*
     @PostMapping("/uploadMultipleFiles")

@@ -36,6 +36,8 @@ public class testImages {
 		this.id = "";
 		this.propertyId = 0;
 		this.imageName = "";
+		this.fileType = "";
+		this.data = null;
 	}
 	
 	public testImages(int propertyId, String imageName, String fileName, String fileType, byte[] data) {
