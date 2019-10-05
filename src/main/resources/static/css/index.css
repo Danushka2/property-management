@@ -1,6 +1,5 @@
 
 header {
-    background-size: cover;
     background-position: bottom center;
     height: 100vh;
 }
@@ -25,9 +24,13 @@ header {
 }
 
 .log-in {
+	color:black;
     margin-left: 20px;
 }
 
+.nav-link{
+	text-shadow: 2px 2px 5px #767676;
+}
 
 #Home-heading {
     position: relative;
@@ -36,6 +39,7 @@ header {
     top: 20vh;
     right: 0;
     color: #fff;
+    text-shadow: 3px 3px 5px #000000;
 }
 
 .avl-property{
