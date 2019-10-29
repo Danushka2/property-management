@@ -30,9 +30,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.boardimak.main.model.Blogs;
 import com.boardimak.main.model.Bookings;
-import com.boardimak.main.model.CmsOther;
 import com.boardimak.main.model.Property;
 import com.boardimak.main.model.Ticket;
 import com.boardimak.main.model.User;
