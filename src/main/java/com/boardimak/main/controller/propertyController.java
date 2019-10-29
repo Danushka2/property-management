@@ -46,7 +46,6 @@ public class propertyController {
 	@Autowired
 	private UserService usersService;
     
-	//-------------harshani change-----------------
 	@GetMapping("/")
 	public String hello(HttpServletRequest request) {
 		request.setAttribute("properties",pService.showAll());
@@ -54,7 +53,6 @@ public class propertyController {
 		return "index";
 	}
 	
-	//-------------harshani change-----------------
 	@GetMapping("/property")
 	public String singleProperty(@RequestParam int id,HttpServletRequest request) {
 		request.setAttribute("property",pService.getAProperty(id));
@@ -94,7 +92,6 @@ public class propertyController {
 		return "all-properties";
 	}
 	
-	//-------------harshani change-----------------
 	@GetMapping("/owner/property")
 	public String ownerShowProperties(HttpServletRequest request, Principal principal, Model model) {
 		if (principal != null) {
@@ -162,7 +159,6 @@ public class propertyController {
 	public String deactivatePropertyStatus(@RequestParam int id,HttpServletRequest request) {
 		Property ob = pService.getAProperty(id);
 		ob.setStatus("Offline");
-		System.out.println(ob);
 		pService.updateProperty(ob);
 		return "redirect:/owner/property";
 	}
@@ -171,7 +167,6 @@ public class propertyController {
 	public String activatePropertyStatus(@RequestParam int id,HttpServletRequest request) {
 		Property ob = pService.getAProperty(id);
 		ob.setStatus("Active");
-		System.out.println(ob);
 		pService.updateProperty(ob);
 		return "redirect:/owner/property";
 	}
@@ -180,7 +175,6 @@ public class propertyController {
 	public String deactivateProperty(@RequestParam int id,HttpServletRequest request) {
 		Property ob = pService.getAProperty(id);
 		ob.setStatus("Offline");
-		System.out.println(ob);
 		pService.updateProperty(ob);
 		return "redirect:/admin/property";
 	}
@@ -189,7 +183,6 @@ public class propertyController {
 	public String activateProperty(@RequestParam int id,HttpServletRequest request) {
 		Property ob = pService.getAProperty(id);
 		ob.setStatus("Active");
-		System.out.println(ob);
 		pService.updateProperty(ob);
 		return "redirect:/admin/property";
 	}
@@ -213,16 +206,7 @@ public class propertyController {
 		
 		return "edit-property";
 	}
-/*
-	//-------------harshani change-----------------
-	@GetMapping("/owner/my-properties")
-	public String showPropImages(HttpServletRequest request) {
-		request.setAttribute("properties",pService.showAll());
-		request.setAttribute("promotion",promS.ShowAllPromotion());
-		return "owner-properties-full";
-	}
-	*/
-	
+
 	@GetMapping("/owner/proposal")
 	public String showProposals(HttpServletRequest request) {
 		request.setAttribute("proposals",pService.showProposals());
@@ -234,7 +218,6 @@ public class propertyController {
 	public String acceptProposals(@RequestParam int id,HttpServletRequest request) {
 		Proposal ob = pService.getAProposal(id);
 		ob.setStatus("Accepted");
-		System.out.println(ob);
 		pService.saveProposal(ob);
 		return "redirect:/owner/proposal";
 	}
@@ -243,7 +226,6 @@ public class propertyController {
 	public String rejectProposals(@RequestParam int id,HttpServletRequest request) {
 		Proposal ob = pService.getAProposal(id);
 		ob.setStatus("Rejected");
-		System.out.println(ob);
 		pService.saveProposal(ob);
 		return "redirect:/owner/proposal";
 	}

@@ -131,6 +131,7 @@
 
                         <div class="dashboard-body">
                                        
+							<img class="property-img" src="../assets/images/house3.png" alt="House images">
 
                         </div>
                     </div>

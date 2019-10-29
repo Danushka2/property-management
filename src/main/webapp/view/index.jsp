@@ -78,18 +78,20 @@
                               <img class="card-img-top" src="/displayImage/${property.id}" alt="Property image">
                           <div class="card-body">
                           <div class = "row">
-                              <div class = "col-sm-8">
-                                	<h6>City: <span class="card-tags">${property.city}</span></h6>
+                              <div class = "col-sm-12">
+                                	<h6>City <br><span class="card-tags txt-green">${property.city}</span></h6>
+                              </div>
+                              
+                          </div>
+                          <div class = "row">
+                              <div class = "col-sm-12">
+                                	  <h6>Price <br>
+                                	    		<span class="card-tags txt-green">Rs.${property.monthlyPayment}/month</span>
+                                	  </h6>
                               </div>
                           </div>
                           <div class = "row">
                               <div class = "col-sm-12">
-                                	  <h6>Price: 
-                                	    		<span class="card-tags">Rs.${property.monthlyPayment}/month</span>
-                                	  </h6>
-                              </div>
-                          </div>
-                                        
                               <c:forEach var="p" items="${promotion }">
 	                                  <c:if test="${property.id == p.property_id}">
 											                  <c:if test="${p.status == 'Active'}">
@@ -101,7 +103,8 @@
 										                    </c:if> 
  											              </c:if>
  										          </c:forEach>
-                          
+                          		</div>
+                          	</div>
                           </div>
                           </div>
                       </a>
